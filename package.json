@@ -2,10 +2,17 @@
   "name": "editor",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "default": "index.html",
+  
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel ./index.html",
+    "prebuild-dev": "shx rm -rf dist/*",
+    "build-dev": "parcel build ./index.html --no-optimize --public-url ./",
+    "prebuild": "shx rm -rf dist/*",
+    "build": "parcel build ./index.html --public-url ./",
+    "push-gh-pages": "push-dir --dir=dist --branch=gh-pages --cleanup --verbose"
   },
+
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -17,6 +24,7 @@
   "devDependencies": {
     "@editorjs/link": "^2.4.2",
     "@editorjs/raw": "^2.3.1",
-    "parcel": "^2.8.0"
+    "parcel": "^2.8.0",
+    "shx": "^0.3.2"
   }
 }
