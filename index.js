@@ -16,6 +16,22 @@ document.getElementById("saveButton").onclick = function() {
 
 
 
+// Show/Hide CV
+const box = document.getElementById('cvblock');
+const btn = document.getElementById('showCVbutton');
+
+btn.addEventListener('click', function handleClick() {
+  if (box.style.display === 'none') {
+    box.style.display = 'block';
+    btn.textContent = 'Hide CV Template';
+  } else {
+    box.style.display = 'none';
+    btn.textContent = 'Show CV Template';
+  }
+});
+
+
+
 const editor = new EditorJS({ 
   /** 
    * Id of Element that should contain the Editor 
