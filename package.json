@@ -1,0 +1,22 @@
+{
+  "name": "editor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@editorjs/editorjs": "^2.25.0",
+    "@editorjs/header": "^2.6.2",
+    "@editorjs/list": "^1.7.0"
+  },
+  "devDependencies": {
+    "@editorjs/link": "^2.4.2",
+    "@editorjs/raw": "^2.3.1",
+    "parcel": "^2.8.0"
+  }
+}
