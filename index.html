@@ -25,7 +25,166 @@
     <!-- Editor -->
 
 
-    <!-- CV Template -->
+    <!-- Input Forms -->
+    <!-- full name, position, gender, language, education, briefly about yourself. 
+        Experience (start date, end date, position, description) 
+        Skills (programming languages, technologies, operating systems) -->
+    <div class="container p-4">
+        <h3 class="h3 pb-2">Main information</h3>
+        <div class="row g-4 pb-4">
+            <div class="col-md">
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Full name</label>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Position</label>
+                </div>
+            </div>
+        </div>
+
+
+        <h3 class="h3 pb-2">Personal information</h3>
+        <div class="row g-4 pb-4">
+            <div class="col-md">
+              <div class="form-floating">
+                <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+                  <option selected>Select</option>
+                  <option value="1">Male</option>
+                  <option value="2">Female</option>
+                </select>
+                <label for="floatingSelectGrid">Gender</label>
+              </div>
+            </div>
+            <div class="col-md">
+                <div class="form-floating">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Language</label>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="form-floating">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Education</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-floating pb-4">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+            <label for="floatingTextarea2">About yourself</label>
+        </div>
+
+
+        <h3 class="h3 pb-2">Experience</h3>
+        <h5 class="h5 pb-2">Position 1</h5>
+        <div class="row g-4 pb-4">
+            <div class="col-md">
+                <div class="form-floating">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Start</label>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="form-floating">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">End</label>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="form-floating">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Position</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-floating pb-4">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+            <label for="floatingTextarea2">About position</label>
+        </div>
+        <button type="button" class="btn btn-outline-primary mb-4">Add Position</button>
+
+
+        <h3 class="h3 pb-2">Skills</h3>
+
+        <h5 class="h5 pb-2">Programming Languages</h5>
+        <div class="row g-4 pb-4">
+            <div class="col-md">
+                <div class="form-floating">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Name</label>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="form-floating">
+                    <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+                      <option selected>Level</option>
+                      <option value="1">Beginner</option>
+                      <option value="2">Intermediate</option>
+                      <option value="3">Advanced</option>
+                    </select>
+                    <label for="floatingSelectGrid">Level</label>
+                </div>
+            </div>
+            <div class="col-md">
+                <button type="button" class="btn btn-outline-primary p-3">Add</button>
+            </div>
+        </div>
+
+        <h5 class="h5 pb-2">Technologies</h5>
+        <div class="row g-4 pb-4">
+            <div class="col-md">
+                <div class="form-floating">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Name</label>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="form-floating">
+                    <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+                      <option selected>Level</option>
+                      <option value="1">Beginner</option>
+                      <option value="2">Intermediate</option>
+                      <option value="3">Advanced</option>
+                    </select>
+                    <label for="floatingSelectGrid">Level</label>
+                </div>
+            </div>
+            <div class="col-md">
+                <button type="button" class="btn btn-outline-primary p-3">Add</button>
+            </div>
+        </div>
+
+        <h5 class="h5 pb-2">Operating Systems</h5>
+        <div class="row g-4 pb-4">
+            <div class="col-md">
+                <div class="form-floating">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Name</label>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="form-floating">
+                    <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+                      <option selected>Level</option>
+                      <option value="1">Beginner</option>
+                      <option value="2">Intermediate</option>
+                      <option value="3">Advanced</option>
+                    </select>
+                    <label for="floatingSelectGrid">Level</label>
+                </div>
+            </div>
+            <div class="col-md">
+                <button type="button" class="btn btn-outline-primary p-3">Add</button>
+            </div>
+        </div>
+        
+    </div>
+
+
+    <!-- CV Show Button -->
     <div class="container p-4">
         <button type="button" class="btn btn-primary" id="showCVbutton">
             Show CV Template
@@ -33,6 +192,7 @@
     </div>
 
 
+     <!-- CV Template -->
     <div id="cvblock" class="container p-4 /*border*/" style="display: none;">
         <h2 class="h2 text-secondary mt-4 mb-4"><strong>Node.js developer</strong></h2>
         <h1 class="h1 text-uppercase mb-4"><strong>Константинопольский 
