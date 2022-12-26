@@ -17,32 +17,32 @@ document.getElementById("saveButton").onclick = function() {
 
 
 // Show/Hide CV
-const box = document.getElementById('cvblock');
-const btn = document.getElementById('showCVbutton');
+// const box = document.getElementById('cvblock');
+// const btn = document.getElementById('showCVbutton');
 
-btn.addEventListener('click', function handleClick() {
-  if (box.style.display === 'none') {
-    box.style.display = 'block';
-    btn.textContent = 'Hide CV Template';
-  } else {
-    box.style.display = 'none';
-    btn.textContent = 'Show CV Template';
-  }
-});
+// btn.addEventListener('click', function handleClick() {
+//   if (box.style.display === 'none') {
+//     box.style.display = 'block';
+//     btn.textContent = 'Hide CV Template';
+//   } else {
+//     box.style.display = 'none';
+//     btn.textContent = 'Show CV Template';
+//   }
+// });
 
 // Show/Hide CV Inputs
-const boxIn = document.getElementById('inputcvblock');
-const btnIn = document.getElementById('showInputCVbutton');
+// const boxIn = document.getElementById('inputcvblock');
+// const btnIn = document.getElementById('showInputCVbutton');
 
-btnIn.addEventListener('click', function handleClick() {
-  if (boxIn.style.display === 'none') {
-    boxIn.style.display = 'block';
-    btnIn.textContent = 'Hide CV Input Block';
-  } else {
-    boxIn.style.display = 'none';
-    btnIn.textContent = 'Show CV Input Block';
-  }
-});
+// btnIn.addEventListener('click', function handleClick() {
+//   if (boxIn.style.display === 'none') {
+//     boxIn.style.display = 'block';
+//     btnIn.textContent = 'Hide CV Input Block';
+//   } else {
+//     boxIn.style.display = 'none';
+//     btnIn.textContent = 'Show CV Input Block';
+//   }
+// });
 
 
 const editor = new EditorJS({ 
