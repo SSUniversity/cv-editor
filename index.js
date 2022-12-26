@@ -6,6 +6,7 @@ import List from '@editorjs/list';
 // const LinkTool = require('@editorjs/link');
 
 
+// Save TextEditor Data
 document.getElementById("saveButton").onclick = function() {
   editor.save().then((outputData) => {
     console.log('Article data: ', outputData)
@@ -13,7 +14,6 @@ document.getElementById("saveButton").onclick = function() {
     console.log('Saving failed: ', error)
   });
 };
-
 
 
 // Show/Hide CV
@@ -30,6 +30,19 @@ btn.addEventListener('click', function handleClick() {
   }
 });
 
+// Show/Hide CV Inputs
+const boxIn = document.getElementById('inputcvblock');
+const btnIn = document.getElementById('showInputCVbutton');
+
+btnIn.addEventListener('click', function handleClick() {
+  if (boxIn.style.display === 'none') {
+    boxIn.style.display = 'block';
+    btnIn.textContent = 'Hide CV Input Block';
+  } else {
+    boxIn.style.display = 'none';
+    btnIn.textContent = 'Show CV Input Block';
+  }
+});
 
 
 const editor = new EditorJS({ 
