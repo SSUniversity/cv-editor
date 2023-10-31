@@ -2,7 +2,7 @@ export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
 	name: "CV Editor",
-	description: "Make beautiful websites regardless of your design experience.",
+	description: "Update your resume with ease using CV-Editor! Our user-friendly service makes it simple to craft a professional CV in just a few clicks. Say goodbye to outdated formats and hello to a standout resume that will impress any employer.",
 	navItems: [
 		{
 			label: "Home",
