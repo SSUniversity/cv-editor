@@ -7,7 +7,7 @@ import {Image} from "@nextui-org/react";
 interface ProjectProps {
     name: string;
     description: string;
-    image_src: string;
+    image: string;
     position: string
     project_link?: string;
 
@@ -29,7 +29,7 @@ export const Project = (props : ProjectProps) => {
                         isZoomed
                         isBlurred
                         alt={props.name + "Image"}
-                        src={props.image_src}
+                        src={props.image}
                     />
                 </div>
             </div>
@@ -42,7 +42,7 @@ export const Project = (props : ProjectProps) => {
                         isZoomed
                         isBlurred
                         alt={props.name + "Image"}
-                        src={props.image_src}
+                        src={props.image}
                     />
                 </div>
                 <div className="col-start-8 col-end-13 h-full flex flex-col justify-center">
