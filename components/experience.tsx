@@ -18,7 +18,7 @@ function getFormatedStringFromDays(numberOfDays:number) {
 }
 
 
-interface ExperienceProps {
+interface ExperienceItemProps {
     name: string;
     description: string;
     start_date: string;
@@ -26,25 +26,31 @@ interface ExperienceProps {
     current_date?: boolean;
 }
 
+interface ExperienceProps {
+    experience_list: ExperienceItemProps[];
+}
+
 
 export const Experience = (props : ExperienceProps) => {
+    const experience_item_list = props.experience_list.map((element, index) => {
+        const date1 = new Date(element.start_date);
+        const date2 = element.current_date? new Date() : new Date(element.end_date)
 
-    const date1 = new Date(props.start_date);
-    const date2 = props.current_date? new Date() : new Date(props.end_date)
+        return (
+            <div key={index} className="grid grid-cols-12 gap-2 mb-4">
+                <div className="col-start-1 col-end-3">
+                    {element.start_date} - {element.end_date} 
+                    <div className="text-default-500">{getFormatedStringFromDays(diffDates(date1, date2))}</div>
+                </div>
+                <div className="col-start-4 col-end-6">
+                    {element.name}
+                </div>
+                <div className="col-start-7 col-end-13">
+                    {element.description} 
+                </div>
+            </div>
+        )
+    })
 
-	return (
-        <div className="grid grid-cols-12 gap-2 mb-4">
-            <div className="col-start-1 col-end-3">
-                {props.start_date} - {props.end_date} 
-                <div className="text-default-500">{getFormatedStringFromDays(diffDates(date1, date2))}</div>
-            </div>
-            <div className="col-start-4 col-end-6">
-                {props.name}
-            </div>
-            <div className="col-start-7 col-end-13">
-                {props.description}
-                
-            </div>
-        </div>
-	);
+    return  <>{experience_item_list}</>
 };

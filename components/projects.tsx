@@ -19,8 +19,8 @@ interface ProjectsProps {
 
 export const Projects = (props : ProjectsProps) => {
     const projects = props.projects_list.map((element, index) => {
-        var position_image = index % 2 == 0 ? "col-start-7 col-end-13" : "col-start-1 col-span-6 "
-        var position_text = index % 2 == 0 ? "col-start-1 col-end-6" : "col-start-8 col-end-13 order-1"
+        var position_image = index % 2 == 0 ? "col-start-7 col-end-13" : "col-start-1 col-span-6 ";
+        var position_text = index % 2 == 0 ? "col-start-1 col-end-6" : "col-start-8 col-end-13 order-1";
 
         return (
             <div className="grid grid-cols-12 gap-2 mb-12" key={index}>
