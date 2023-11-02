@@ -1,18 +1,14 @@
 "use client";
 import React from "react";
 import {Image} from "@nextui-org/react";
-
-import { title } from "@/components/primitives";
-
 import { SocialLink } from "@/components/social-link";
 import { Experience } from "@/components/experience";
-import { Project } from "@/components/project";
+import { Projects } from "@/components/projects";
 
 
 
 export default function Dev2Page() {
     const profile_data = require("./template-1-data.json");
-
 	return (
 		<div>
 			<h1 className="h6 text-uppercase text-center pb-4">
@@ -71,14 +67,9 @@ export default function Dev2Page() {
 
             <div className="container pt-5 pb-5">
                 <h2 className="h6 uppercase text-end pb-4" id="projects">projects by companies</h2>
-                {profile_data.projects.map((item:any) => 
-                    <Project 
-                        name={item.name}
-                        description={item.description}
-                        image={item.image}
-                        position={item.position}
-                    />
-                )}
+                <Projects 
+                    projects_list={...profile_data.projects}
+                />
             </div>
 
 	    </div>

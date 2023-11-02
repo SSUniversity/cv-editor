@@ -58,20 +58,17 @@
         {
             "name": "YKSoft",
             "description": "Work on projects for businesses in various fields from construction companies to the agro-industrial complex. Creation, revision and support of websites and products. Development of internal services and projects of the company.",
-            "image": "https://nextui-docs-v2.vercel.app/images/hero-card-complete.jpeg",
-            "position": "left"
+            "image": "https://nextui-docs-v2.vercel.app/images/hero-card-complete.jpeg"
         },
         {
             "name": "Climbing Lines",
             "description": "An app for climbers that allows you to discover new places to climb and find different routes in locations. It contains selections based on users interests and collections moderated by experienced guides. In addition, the trip is accompanied by a convenient route tracking, which allows anyone to get the maximum of emotions from the ascent and not get lost. It is also possible to share feedback on the route and update information about it.",
-            "image": "https://nextui-docs-v2.vercel.app/images/hero-card-complete.jpeg",
-            "position": "right"
+            "image": "https://nextui-docs-v2.vercel.app/images/hero-card-complete.jpeg"
         },
         {
             "name": "Venrok",
             "description": "A sports app for professional athletes that allows its users to customize their workout in the most detailed way. There is not only a basic functionality with workouts and a tracker, but also many parameters which allows you to train as efficiently as possible. An important advantage is the possibility to add the role of a coach and the ability to join groups, followed by viewing detailed statistics and analytics for each athlete who trains in your community.",
-            "image": "https://nextui-docs-v2.vercel.app/images/hero-card-complete.jpeg",
-            "position": "left"
+            "image": "https://nextui-docs-v2.vercel.app/images/hero-card-complete.jpeg"
         }
     ]
 }

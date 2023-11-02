@@ -49,9 +49,9 @@ export const SocialLink = (props : SocialProps) => {
     const icon_size = 36
     const icon_color = "text-default-500"
 
-	const social_icons = props.links.map((element) => {
+	const social_icons = props.links.map((element, index) => {
 		var url = new URL(element.toString());
-    	return 	<Link isExternal href={element.toString()} aria-label="Github">
+    	return 	<Link isExternal href={element.toString()} aria-label="Github" key={index}>
 					{IconVariant(url.host.toString(), icon_color, icon_size)}
 				</Link>;
    	});
