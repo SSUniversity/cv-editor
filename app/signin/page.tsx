@@ -17,10 +17,6 @@ export default function SignIn() {
 			<h1 className={title()}>Sign In</h1>
 
             <SignInForm />
-
-        </section>
-
-
-			
+        </section>		
 	);
 }
