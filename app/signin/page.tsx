@@ -5,6 +5,8 @@ import {Button, ButtonGroup} from "@nextui-org/button";
 import {Input} from "@nextui-org/input";
 import { EyeFilledIcon, EyeSlashFilledIcon } from "@/components/icons";
 import { SignInForm } from "@/components/sign-in-form";
+import { GithubButton } from "@/components/log-in-github";
+import { HHButton } from "@/components/log-in-hh";
 
 
 export default function SignIn() {
@@ -13,10 +15,14 @@ export default function SignIn() {
 
     
 	return (
-		<section className="flex flex-col w-full items-center justify-center gap-24">
+		<section className="flex flex-col w-full items-center justify-center gap-12">
 			<h1 className={title()}>Sign In</h1>
-
             <SignInForm />
+            or
+            <div className="flex flex-col w-full gap-4 items-center ">
+                <GithubButton />
+                {/* <HHButton /> */}
+            </div>
         </section>		
 	);
 }
