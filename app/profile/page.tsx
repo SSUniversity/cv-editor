@@ -1,4 +1,7 @@
 // "use client";
+// "use server";
+
+
 import { title } from "@/components/primitives";
 import React from "react";
 
@@ -6,6 +9,7 @@ import { authConfig } from "@/config/auth";
 import { getServerSession } from "next-auth/next";
 
 export default async function Profile() {
+
 	const session = await getServerSession(authConfig);
     
 	return (
