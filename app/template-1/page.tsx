@@ -9,7 +9,7 @@ import { About } from "@/components/about";
 
 
 export default function Template1Page() {
-    const profile_data = require("./template-1-data.json");
+    const profile_data = require("@/data-template/template-1-data.json");
 	return (
 		<div>
 			<h1 className="h6 text-uppercase text-center pb-4">

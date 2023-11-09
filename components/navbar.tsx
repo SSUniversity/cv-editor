@@ -1,3 +1,4 @@
+"use client";
 import {
 	Navbar as NextUINavbar,
 	NavbarContent,
@@ -31,6 +32,10 @@ import {Tooltip} from "@nextui-org/tooltip";
 
 import { Logo } from "@/components/icons";
 
+import { useSession, signOut } from "next-auth/react";
+import { usePathname } from "next/navigation";
+import { getServerSession } from "next-auth/next";
+
 export const Navbar = () => {
 	// const searchInput = (
 	// 	<Input
@@ -52,6 +57,10 @@ export const Navbar = () => {
 	// 		type="search"
 	// 	/>
 	// );
+
+	const session = useSession();
+
+  	// console.log(session);
 
 	return (
 		<NextUINavbar maxWidth="xl" position="sticky">
@@ -98,16 +107,6 @@ export const Navbar = () => {
 				</NavbarItem>
 				{/* <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem> */}
 				<NavbarItem className="hidden md:flex gap-4">
-					{/* <Button
-            isExternal
-						as={Link}
-						className="text-sm font-normal text-default-600 bg-default-100"
-						href={siteConfig.links.sponsor}
-						startContent={<HeartFilledIcon className="text-danger" />}
-						variant="flat"
-					>
-						Sponsor
-					</Button> */}
 
 					<Button
             			// isExternal
@@ -120,25 +119,46 @@ export const Navbar = () => {
 						Create CV
 					</Button>
 					
-					<Tooltip 
+
+
+					{session?.data ? (
+						<Tooltip 
 						content={
 							<div className="flex px-1 py-2 flex-col gap-2">
-								<Button>View Profile</Button>
-								<Button color="danger">Sign out</Button>
+								<Button 
+									as={Link}
+									href="/profile"
+								>
+									View Profile
+								</Button>
+								<Button color="danger" onClick={() => signOut({ callbackUrl: "/" })} >Sign out</Button>
 							</div>
 						}
-					>
-						<Button
-							// isExternal
+						>
+							<Button
+								as={Link}
+								className="text-sm font-normal text-default-600 bg-default-100"
+								href={session?.data ? "/profile" : "/signin"}
+								startContent={<ProfileCircleIcon className="text-primary" />}
+								variant="flat"
+							>
+								{session?.data?.user?.name}
+							</Button>
+						</Tooltip>
+						) : (
+							<Button
 							as={Link}
 							className="text-sm font-normal text-default-600 bg-default-100"
-							href="/auth"
+							href="/signin"
 							startContent={<ProfileCircleIcon className="text-primary" />}
 							variant="flat"
-						>
-							Sign Up
-						</Button>
-					</Tooltip>
+							>
+								Sign In
+							</Button>
+					)}
+
+
+
 
 				</NavbarItem>
 			</NavbarContent>

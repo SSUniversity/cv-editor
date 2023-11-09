@@ -8,7 +8,6 @@ interface ProjectItemProps {
     name: string;
     description: string;
     image: string;
-    position: string
     project_link?: string;
 }
 

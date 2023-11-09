@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 		shortcut: "/favicon-16x16.png",
 		apple: "/apple-touch-icon.png",
 	},
+	
 };
 
 export default function RootLayout({
@@ -30,14 +31,19 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en" suppressHydrationWarning>
-			<head />
+		<html lang="en" suppressHydrationWarning> 
+			 
+			<head>
+			
+			</head>
+
 			<body
 				className={clsx(
 					"min-h-screen bg-background font-sans antialiased",
 					fontSans.variable
 				)}
 			>
+				
 				<Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
 					<div className="relative flex flex-col h-screen">
 						<Navbar />

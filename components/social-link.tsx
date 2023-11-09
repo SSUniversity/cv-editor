@@ -57,7 +57,7 @@ export const SocialLink = (props : SocialProps) => {
    	});
 
 	return (
-		<section className="flex w-full flex-wrap gap-3 justify-center items-center">
+		<section className="flex w-full flex-wrap gap-3 justify-center items-center mb-4">
 			{social_icons}
         </section>
 	);

@@ -1,0 +1,382 @@
+{
+    "_progress": {
+        "mandatory": [],
+        "percentage": 55,
+        "recommended": [
+            "birth_date",
+            "portfolio",
+            "photo",
+            "driver_license_types",
+            "district",
+            "hidden_fields",
+            "work_ticket",
+            "education",
+            "has_vehicle",
+            "salary",
+            "skill_set",
+            "recommendation",
+            "middle_name",
+            "metro",
+            "site"
+        ]
+    },
+    "access": {
+        "type": {
+            "id": "clients",
+            "name": "видно всем компаниям, зарегистрированным на HeadHunter"
+        }
+    },
+    "actions": {
+        "download": {
+            "pdf": {
+                "url": "https://api.hh.ru/resumes/ca9fb415848/download/pdf-file.pdf?type=pdf"
+            },
+            "rtf": {
+                "url": "https://api.hh.ru/resumes/ca9fb415848/download/rtf-file.rtf?type=rtf"
+            }
+        }
+    },
+    "age": null,
+    "alternate_url": "https://hh.ru/resume/ca9fb415848",
+    "area": {
+        "id": "1",
+        "name": "Москва",
+        "url": "https://api.hh.ru/areas/1"
+    },
+    "birth_date": null,
+    "blocked": false,
+    "business_trip_readiness": {
+        "id": "never",
+        "name": "не готов к командировкам"
+    },
+    "can_publish_or_update": false,
+    "certificate": [],
+    "citizenship": [
+        {
+            "id": "113",
+            "name": "Россия",
+            "url": "https://api.hh.ru/areas/113"
+        }
+    ],
+    "contact": [
+        {
+            "comment": "Звонить после 12",
+            "need_verification": true,
+            "preferred": false,
+            "type": {
+                "id": "cell",
+                "name": "Мобильный телефон"
+            },
+            "value": {
+                "city": "495",
+                "country": "7",
+                "formatted": "+7 (495) 808-12-51",
+                "number": "8081251"
+            },
+            "verified": false
+        },
+        {
+            "preferred": true,
+            "type": {
+                "id": "email",
+                "name": "Эл. почта"
+            },
+            "value": "my-email@example.com"
+        }
+    ],
+    "created_at": "2023-05-25T14:19:02+0300",
+    "creds": {
+        "answers": {
+            "27": {
+                "answer_group": "positive",
+                "answer_id": "27",
+                "ask_questions_after": [],
+                "description": null,
+                "positive_title": "Есть опыт работы поваром, пекарем или кондитером",
+                "skip_at_result": false,
+                "title": "Да"
+            },
+            "28": {
+                "answer_group": "negative",
+                "answer_id": "28",
+                "ask_questions_after": [],
+                "description": null,
+                "positive_title": "Нет опыта работы поваром, пекарем или кондитером",
+                "skip_at_result": true,
+                "title": "Нет опыта"
+            },
+            "29": {
+                "answer_group": "positive",
+                "answer_id": "29",
+                "ask_questions_after": [],
+                "description": null,
+                "positive_title": "Есть кулинарное образование",
+                "skip_at_result": false,
+                "title": "Да, есть"
+            },
+            "30": {
+                "answer_group": "negative",
+                "answer_id": "30",
+                "ask_questions_after": [],
+                "description": null,
+                "positive_title": "Нет кулинарного образования",
+                "skip_at_result": true,
+                "title": "Нет образования"
+            }
+        },
+        "question_to_answer_map": {
+            "14": [
+                "27"
+            ]
+        },
+        "questions": {
+            "14": {
+                "description": null,
+                "is_active": true,
+                "possible_answers": [
+                    "27",
+                    "28"
+                ],
+                "question_id": "14",
+                "question_title": "Работали раньше поваром, пекарем или кондитером?",
+                "question_type": "single_choice",
+                "required": true,
+                "skip_title_at_view": true,
+                "view_title": null
+            },
+            "15": {
+                "description": null,
+                "is_active": true,
+                "possible_answers": [
+                    "29",
+                    "30"
+                ],
+                "question_id": "15",
+                "question_title": "У вас есть кулинарное образование?",
+                "question_type": "single_choice",
+                "required": true,
+                "skip_title_at_view": true,
+                "view_title": null
+            }
+        }
+    },
+    "download": {
+        "pdf": {
+            "url": "https://api.hh.ru/resumes/ca9fb415848/download/pdf-file.pdf?type=pdf"
+        },
+        "rtf": {
+            "url": "https://api.hh.ru/resumes/ca9fb415848/download/rtf-file.rtf?type=rtf"
+        }
+    },
+    "driver_license_types": [],
+    "education": {
+        "additional": [],
+        "attestation": [],
+        "elementary": [],
+        "level": {
+            "id": "master",
+            "name": "Магистр"
+        },
+        "primary": [
+            {
+                "name": "testUniversity",
+                "name_id": null,
+                "organization": "testFaculty",
+                "organization_id": null,
+                "result": "testSpeciality",
+                "result_id": null,
+                "year": 1988
+            }
+        ]
+    },
+    "employment": {
+        "id": "full",
+        "name": "Полная занятость"
+    },
+    "employments": [
+        {
+            "id": "full",
+            "name": "Полная занятость"
+        }
+    ],
+    "experience": [
+        {
+            "area": {
+                "id": "1",
+                "name": "Москва",
+                "url": "https://api.hh.ru/areas/1"
+            },
+            "company": "Компания",
+            "company_id": null,
+            "company_url": "http://url.ru",
+            "description": "Руководил отделом",
+            "employer": null,
+            "end": "2012-02-06",
+            "industries": [],
+            "industry": {
+                "id": "1",
+                "name": "Банки/кредиты/инвестиции/лизинг"
+            },
+            "position": "Директор",
+            "start": "2011-01-02"
+        }
+    ],
+    "finished": true,
+    "first_name": "Иван",
+    "gender": {
+        "id": "male",
+        "name": "Мужской"
+    },
+    "has_vehicle": null,
+    "hidden_fields": [],
+    "id": "ca9fb415848",
+    "language": [
+        {
+            "id": "chv",
+            "level": {
+                "id": "a1",
+                "name": "A1 — Начальный"
+            },
+            "name": "Чувашский"
+        }
+    ],
+    "last_name": "Иванов",
+    "metro": null,
+    "middle_name": null,
+    "moderation_note": [],
+    "new_views": 0,
+    "next_publish_at": "2023-05-25T18:19:03+0300",
+    "paid_services": [
+        {
+            "active": false,
+            "id": "resume_autoupdating",
+            "name": "Автоподнятие резюме"
+        },
+        {
+            "active": false,
+            "id": "resume_marked",
+            "name": "Яркое резюме"
+        }
+    ],
+    "photo": null,
+    "platform": {
+        "id": "headhunter"
+    },
+    "portfolio": [],
+    "professional_roles": [
+        {
+            "id": "124",
+            "name": "Тестировщик"
+        }
+    ],
+    "progress": {
+        "mandatory": [],
+        "percentage": 55,
+        "recommended": [
+            {
+                "id": "birth_date",
+                "name": "Дата рождения"
+            },
+            {
+                "id": "portfolio",
+                "name": "Портфолио"
+            },
+            {
+                "id": "photo",
+                "name": "Фото"
+            },
+            {
+                "id": "driver_license_types",
+                "name": "Категория водительских прав"
+            },
+            {
+                "id": "district",
+                "name": "Район проживания"
+            },
+            {
+                "id": "hidden_fields",
+                "name": "Список скрытых полей"
+            },
+            {
+                "id": "work_ticket",
+                "name": "Разрешение на работу"
+            },
+            {
+                "id": "education",
+                "name": "Образование"
+            },
+            {
+                "id": "has_vehicle",
+                "name": "Наличие автомобиля"
+            },
+            {
+                "id": "salary",
+                "name": "Зарплата"
+            },
+            {
+                "id": "skill_set",
+                "name": "Ключевые навыки"
+            },
+            {
+                "id": "recommendation",
+                "name": "Рекомендации"
+            },
+            {
+                "id": "middle_name",
+                "name": "Отчество"
+            },
+            {
+                "id": "metro",
+                "name": "Ближайшая станция метро"
+            },
+            {
+                "id": "site",
+                "name": "Дополнительные способы связи"
+            }
+        ]
+    },
+    "publish_url": "https://api.hh.ru/resumes/ca9fb415848/publish",
+    "recommendation": [],
+    "relocation": {
+        "area": [],
+        "district": [],
+        "type": {
+            "id": "no_relocation",
+            "name": "не готов к переезду"
+        }
+    },
+    "resume_locale": {
+        "id": "RU",
+        "name": "Русский"
+    },
+    "salary": null,
+    "schedule": {
+        "id": "fullDay",
+        "name": "Полный день"
+    },
+    "schedules": [
+        {
+            "id": "fullDay",
+            "name": "Полный день"
+        }
+    ],
+    "site": [],
+    "skill_set": [],
+    "skills": "Руководство большой командой",
+    "status": {
+        "id": "published",
+        "name": "опубликовано"
+    },
+    "title": "API Test Resume",
+    "total_experience": {
+        "months": 14
+    },
+    "total_views": 0,
+    "travel_time": {
+        "id": "any",
+        "name": "Не имеет значения"
+    },
+    "updated_at": "2023-05-25T14:19:03+0300",
+    "views_url": "https://api.hh.ru/resumes/ca9fb415848/views",
+    "work_ticket": []
+}
