@@ -16,7 +16,6 @@ import {Divider} from "@nextui-org/divider"
 import {Textarea} from "@nextui-org/input";
 import {Progress} from "@nextui-org/progress";
 
-import { Accordion1 } from "@/components/accordion";
 
 
 
