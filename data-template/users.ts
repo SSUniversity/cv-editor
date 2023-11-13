@@ -1,8 +1,8 @@
 export const users = [
     {
         id: "1",
-        email: "admin@cv-editor.com",
-        name: "Max Kul",
+        email: "admin@cv-editor.ru",
+        name: "Max Kulakov",
         password: "12345",
         role: "admin",
         image: "https://kulakov.design/src/images/home/photo.png"
