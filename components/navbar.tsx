@@ -11,7 +11,7 @@ import {
 import { Button } from "@nextui-org/button";
 import { Link } from "@nextui-org/link";
 
-import { link as linkStyles } from "@nextui-org/theme";
+import { link as linkStyles, user } from "@nextui-org/theme";
 
 import { siteConfig } from "@/config/site";
 import NextLink from "next/link";
@@ -29,12 +29,15 @@ import {
 } from "@/components/icons";
 
 import {Tooltip} from "@nextui-org/tooltip";
+import {Avatar, AvatarGroup, AvatarIcon} from "@nextui-org/avatar";
 
 import { Logo } from "@/components/icons";
 
 import { useSession, signOut } from "next-auth/react";
 import { usePathname } from "next/navigation";
 import { getServerSession } from "next-auth/next";
+import { data } from "autoprefixer";
+import { image } from "@nextui-org/react";
 
 export const Navbar = () => {
 	// const searchInput = (
@@ -139,10 +142,16 @@ export const Navbar = () => {
 								as={Link}
 								className="text-sm font-normal text-default-600 bg-default-100"
 								href={session?.data ? "/profile" : "/signin"}
-								startContent={<ProfileCircleIcon className="text-primary" />}
 								variant="flat"
+								startContent={
+									session?.data?.user?.image? 
+									<Avatar src={session?.data?.user?.image!} size="sm" className="w-6 h-6 text-tiny"/>
+									:
+									<ProfileCircleIcon className="text-primary" /> 
+								}
 							>
 								{session?.data?.user?.name}
+								{/* {session?.data?.user?.image} */}
 							</Button>
 						</Tooltip>
 						) : (
@@ -150,7 +159,9 @@ export const Navbar = () => {
 							as={Link}
 							className="text-sm font-normal text-default-600 bg-default-100"
 							href="/signin"
-							startContent={<ProfileCircleIcon className="text-primary" />}
+							startContent={
+								<ProfileCircleIcon className="text-primary" />
+							}
 							variant="flat"
 							>
 								Sign In

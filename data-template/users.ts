@@ -5,6 +5,7 @@ export const users = [
         name: "Max Kul",
         password: "12345",
         role: "admin",
+        image: "https://kulakov.design/src/images/home/photo.png"
     },
     {
         id: "2",

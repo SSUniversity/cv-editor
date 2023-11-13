@@ -7,6 +7,7 @@ import React from "react";
 
 import { authConfig } from "@/config/auth";
 import { getServerSession } from "next-auth/next";
+import { Link } from "@nextui-org/link";
 
 export default async function Profile() {
 
@@ -17,7 +18,7 @@ export default async function Profile() {
 			<h1 className={title()}>Profile of {session?.user?.name}</h1>
 			{/* <h1>Profile of {session?.user?.name}</h1> */}
       		{/* {session?.user?.image && <img src={session.user.image} alt="" />} */}
-
+			<Link href="/hh">HH Dev Page</Link>
         </section>
 
 
