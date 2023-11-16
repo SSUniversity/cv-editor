@@ -6,9 +6,12 @@ import { title } from "@/components/primitives";
 import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, User, Chip, ChipProps, Tooltip, getKeyValue} from "@nextui-org/react";
 import {Checkbox} from "@nextui-org/checkbox";
 import {Input} from "@nextui-org/input";
+import {Divider} from "@nextui-org/divider";
 
 
 import {users} from "./data";
+import { Comparison } from "@/components/comparison";
+
 
 // function Resume (name: String, description: String) {
 // 	this.name = name;
@@ -38,7 +41,7 @@ class Resume {
 		public about: string[],
 		public education: ExperienceItemProps[],
 		public experience: ExperienceItemProps[],
-		public project?: ProjectItemProps[],
+		public projects?: ProjectItemProps[],
 	){}
 }
 
@@ -46,7 +49,7 @@ class Resume {
 export default function HHDevPage() {
 	const hh_data = require("@/data-template/template-hh-data.json");
 	const service_data = require("@/data-template/template-1-data.json");
-
+	const text_template = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
 
 	const resume = new Resume("","",[],"", [], [], [], []);
 	resume.name = service_data.name;
@@ -56,103 +59,52 @@ export default function HHDevPage() {
 	resume.about = service_data.about;
 	resume.education = service_data.education;
 	resume.experience = service_data.experience;
-	resume.project = service_data.projects;
+	resume.projects = service_data.projects;
 
+	// console.log(typeof resume.description)
+	// console.log(Array.isArray(resume.about))
+	// console.log(typeof resume.education)
+	// console.log(Array.isArray(resume.education))
 
 	// console.log(JSON.stringify(resume));
 
 	// console.log(Resume.name[1])
 
 
-
-	const columns = [
-		{name: "Name", uid: "name"},
-		{name: "CV Editor", uid: "cveditor"},
-		{name: "hh.ru", uid: "hh"},
-		{name: "Custom", uid: "custom"},
-	];
-	  
-	type User = typeof users[0];
-
-	const renderCell = React.useCallback((user: User, columnKey: React.Key) => {
-		const cellValue = user[columnKey as keyof User];
-	
-		switch (columnKey) {
-		  case "name":
-			return (
-			  <User
-				avatarProps={{radius: "lg", src: user.avatar}}
-				description={user.email}
-				name={cellValue}
-			  >
-				{user.email}
-			  </User>
-			);
-		  case "cveditor":
-			return (
-			  <div className="flex flex-col">
-				<p className="text-bold text-sm capitalize">{cellValue}</p>
-				<p className="text-bold text-sm capitalize text-default-400">{user.team}</p>
-			  </div>
-			);
-		  case "hh":
-			return (
-			  <Chip className="capitalize" size="sm" variant="flat">
-				{cellValue}
-			  </Chip>
-			);
-		  case "custom":
-			return (
-			  <div className="relative flex items-center gap-2">
-				<Tooltip content="Details">
-				  <span className="text-lg text-default-400 cursor-pointer active:opacity-50">
-					{/* <EyeIcon /> */}
-				  </span>
-				</Tooltip>
-				<Tooltip content="Edit user">
-				  <span className="text-lg text-default-400 cursor-pointer active:opacity-50">
-					{/* <EditIcon /> */}
-				  </span>
-				</Tooltip>
-				<Tooltip color="danger" content="Delete user">
-				  <span className="text-lg text-danger cursor-pointer active:opacity-50">
-					{/* <DeleteIcon /> */}
-				  </span>
-				</Tooltip>
-			  </div>
-			);
-		  default:
-			return cellValue;
-		} }, []);
-
-
-
-
 	return (
-		<section className="flex flex-col items-center justify-center gap-24 py-8 md:py-10 ">
-			<div className="flex flex-col items-center justify-center text-center gap-4">
+		<section className="">
+			<div >
 				<h1 className={title()}>HH Dev Page</h1>
+				<div className="mb-8"/>
+
+				<div className="flex gap-2 mb-4 text-start">
+					<div className="w-1/6 max-w-full items-start font-bold opacity-40">
+						Field Name
+					</div>
+					<div className="w-2/6 max-w-full items-start font-bold opacity-40">
+						CV Editor
+					</div>
+					<div className="w-2/6 max-w-full items-start font-bold opacity-40">
+						hh.ru
+					</div>
+					<div className="w-1/6 max-w-full items-start font-bold opacity-40">
+						Custom
+					</div>
+				</div>
+				
+
+				{/* <p>Divider test</p> */}
+				<Comparison name="Full Name" cv_editor={resume.name} hh_ru={resume.name}/>
+				<Comparison name="Description" cv_editor={resume.description} hh_ru={resume.description}/>
+				<Comparison name="Social Links" cv_editor={resume.social_links} hh_ru={resume.social_links}/>
+				<Comparison name="About" cv_editor={resume.about} hh_ru={resume.about}/>
+				<Comparison name="Education" cv_editor={resume.education} hh_ru={resume.education}/>
+				<Comparison name="Experience" cv_editor={resume.experience} hh_ru={resume.experience}/>
+				<Comparison name="Projects" cv_editor={resume.projects} hh_ru={resume.projects}/>
+				
 			</div>
 
 			
-			<Table aria-label="Example table with custom cells" className="text-start">
-				<TableHeader columns={columns}>
-					{(column) => (
-					<TableColumn key={column.uid} align={column.uid === "actions" ? "center" : "start"}>
-						{column.name}
-					</TableColumn>
-					)}
-				</TableHeader>
-				<TableBody items={users}>
-					{(item) => (
-					<TableRow key={item.id}>
-						{(columnKey) => <TableCell>{renderCell(item, columnKey)}</TableCell>}
-					</TableRow>
-					)}
-				</TableBody>
-			</Table>
-			
-
 			
 
 			
