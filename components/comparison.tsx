@@ -111,7 +111,6 @@ export const Comparison = (props: ComparisonItemProps) => {
     return  (
         <section className="">        
             <Divider className="my-8" />
-          
 
             <RadioGroup orientation="horizontal" defaultValue="answer-1" className="flex gap-2 mb-4 text-start ">     
                 <div className="w-1/6 items-start font-bold opacity-80">
@@ -122,15 +121,12 @@ export const Comparison = (props: ComparisonItemProps) => {
                 </Radio>
                 <Radio value="answer-2" className="w-2/6 max-w-full items-start">
                     {hh_ru_item_list}
-                    {/* {cv_editor_item_list} */}
                 </Radio>
                 <Radio value="answer-3" className="w-1/6 max-w-full items-start">
                     <ActionFieldButton />
                 </Radio>  
             </RadioGroup>
-
-
-            
+  
         </section>
 
     )};

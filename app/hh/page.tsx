@@ -93,7 +93,6 @@ export default function HHDevPage() {
 				</div>
 				
 
-				{/* <p>Divider test</p> */}
 				<Comparison name="Full Name" cv_editor={resume.name} hh_ru={resume.name}/>
 				<Comparison name="Description" cv_editor={resume.description} hh_ru={resume.description}/>
 				<Comparison name="Social Links" cv_editor={resume.social_links} hh_ru={resume.social_links}/>

@@ -8,6 +8,7 @@ import React from "react";
 import { authConfig } from "@/config/auth";
 import { getServerSession } from "next-auth/next";
 import { Link } from "@nextui-org/link";
+import { Button } from "@nextui-org/button";
 
 export default async function Profile() {
 
@@ -19,6 +20,11 @@ export default async function Profile() {
 			{/* <h1>Profile of {session?.user?.name}</h1> */}
       		{/* {session?.user?.image && <img src={session.user.image} alt="" />} */}
 			<Link href="/hh">HH Dev Page</Link>
+
+			<Link href={"https://hh.ru/oauth/authorize?response_type=code&client_id=" + process.env.HH_ID}
+			>
+				<Button>Авторизация hh.ru</Button>
+			</Link>
         </section>
 
 
