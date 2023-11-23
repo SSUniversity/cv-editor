@@ -43,14 +43,18 @@ export default function HHSignInPage() {
 				Access Token:
 				<Suspense fallback={<div>Loading...</div>}>
 					<Code size="lg">{resultData}</Code>
+
+					{/* <Button type="button" onClick={() => router.push(`/api/hh?token=${resultData}`)}>
+						Посмотреть мои резюме
+					</Button> */}
+
+					<Link isExternal href={`/api/hh?token=${resultData}`}>
+						<Button>Посмотреть мои резюме</Button>
+					</Link>
+
 				</Suspense>
 			</div>
 
-
-			<Link isExternal href={'/api/hh?token=' + {resultData}}>
-				<Button>Посмотреть мои резюме</Button>
-			</Link>
-			
 		
 		</section>
 	);
