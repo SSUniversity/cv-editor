@@ -17,68 +17,32 @@ import { useState, useEffect } from "react";
 import {Code} from "@nextui-org/code";
 import { user } from "@nextui-org/theme";
 
-// function Resume (name: String, description: String) {
-// 	this.name = name;
-// }
 
-
-// var abc = []
-
-// reference with user list
-// const Card = (props:any) => {
-// 	const { user } = props;
-  
-// 	return <div>
-// 	  <div>{user.gender}</div>
-// 	  <div>{user.name.title} {user.name.first} {user.name.last}</div>
-// 	  <hr />
-// 	</div>;
-//   };
-// reference with user list
 
 
 export default function HHSignInPage() {
 
 	const searchParams = useSearchParams()
 	const code = searchParams.get('code')
-
-
-	// const [userToken, setUserToken] = useState();
-	// const getUserToken = async() => {
-	// 	var myHeaders = new Headers();
-	// 	myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
-
-	// 	var urlencoded = new URLSearchParams();
-	// 	urlencoded.append("grant_type", "authorization_code");
-	// 	urlencoded.append("client_id", process.env.HH_ID!);
-	// 	urlencoded.append("client_secret", process.env.HH_SECRET!);
-	// 	urlencoded.append("code", code!);
-
-	// 	try {
-	// 		const res = await fetch("https://hh.ru/oauth/token", {
-	// 			method: 'POST',
-	// 			headers: myHeaders,
-	// 			body: urlencoded,
-	// 			redirect: 'follow'
-	// 		})
-				
-	// 		const result = await res.json();
-	// 		setUserToken(result.data);
-	// 		// console.log(userToken);
-	// 		console.log(result)
-	// 		return result
-
-	// 		// return(result);
-	// 	} catch (error) { }
-	// };
-
-	// getUserToken();
 	
 	const [userToken, setUserToken] = useState();
 	useEffect(()=>{ 
 		const getUserToken = async() => {
 			var myHeaders = new Headers();
 			myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+			myHeaders.append("Access-Control-Allow-Origin", "*");
+			myHeaders.append('Access-Control-Allow-Credentials', "true")
+    		myHeaders.append('Access-Control-Allow-Origin', '*') // replace this your actual origin
+    		myHeaders.append('Access-Control-Allow-Methods', 'GET,DELETE,PATCH,POST,PUT')
+    		myHeaders.append(
+					'Access-Control-Allow-Headers',
+					'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+				)
+			// myHeaders.append("", "");
+			// myHeaders.append("", "");
+			// myHeaders.append("", "");
+			// myHeaders.append("", "");
+			// myHeaders.append("", "");
 	
 			var urlencoded = new URLSearchParams();
 			urlencoded.append("grant_type", "authorization_code");
@@ -91,16 +55,16 @@ export default function HHSignInPage() {
 					method: 'POST',
 					headers: myHeaders,
 					body: urlencoded,
-					redirect: 'follow'
-				})
+					redirect: 'follow',
+					mode: 'no-cors'
+				});
 					
 				const result = await res.json();
 				setUserToken(result.data);
 				// console.log(userToken);
 				
-				console.log("4");
-				console.log(result)
-				return result
+				console.log(result);
+				return result;
 	
 				// return(result);
 			} 
@@ -111,7 +75,6 @@ export default function HHSignInPage() {
 		
 		getUserToken();
 	},[])
-
 
 
 
