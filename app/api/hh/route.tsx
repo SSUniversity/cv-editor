@@ -6,6 +6,7 @@ export async function GET(req: Request) {
 
 	const { searchParams } = new URL(req.url)
     const code = searchParams.get('code');
+    const token = searchParams.get('token');
 
     if (code != null) {
         var myHeaders = new Headers();
@@ -23,26 +24,23 @@ export async function GET(req: Request) {
                 headers: myHeaders,
                 body: urlencoded,
                 redirect: 'follow',
-                // credentials: "include",
-                // mode: 'no-cors'
             });
                 
             const result = await res.json();
-            // console.log(userToken);
-            
-            console.log(result);
-            // return NextResponse.json(result);
             return NextResponse.json(result);
-
-            // return(result);
         } 
         catch (error) {
             console.log(error);
         }
+    } 
 
-    } else {
-        return NextResponse.json("bad request");
+
+    if (token != null) {
+
     }
+
+    
+    return NextResponse.json("bad request");
 }
 
 
