@@ -23,13 +23,22 @@ import {getUserToken} from "@/lib/getUserToken"
 
 
 
+
 export default function HHSignInPage() {
 
 	const searchParams = useSearchParams()
 	const code = searchParams.get('code')
-	const resultData = getUserToken(code!);
-
 	
+	const [url, setUrl] = React.useState('')
+	React.useEffect(() => {
+		getDownloadURL().then(setUrl)
+	}, [])
+	async function getDownloadURL(){
+		const resultData = getUserToken(code!);
+		return await Promise.resolve(resultData)
+	}
+	
+
 	return (
 		<section className="flex flex-col items-center justify-center gap-24 ">
 			<h1>HH Sign In Page</h1>
@@ -42,13 +51,9 @@ export default function HHSignInPage() {
 			<div className="flex flex-col items-center justify-center gap-2">
 				Access Token:
 				<Suspense fallback={<div>Loading...</div>}>
-					<Code size="lg">{resultData}</Code>
+					<Code size="lg">{url}</Code>
 
-					{/* <Button type="button" onClick={() => router.push(`/api/hh?token=${resultData}`)}>
-						Посмотреть мои резюме
-					</Button> */}
-
-					<Link isExternal href={`/api/hh?token=${resultData}`}>
+					<Link isExternal href={'/api/hh?token=' + url}>
 						<Button>Посмотреть мои резюме</Button>
 					</Link>
 
