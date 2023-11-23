@@ -32,12 +32,11 @@ export default function HHSignInPage() {
 			myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
 			myHeaders.append("Access-Control-Allow-Origin", "*");
 			myHeaders.append('Access-Control-Allow-Credentials', "true")
-    		myHeaders.append('Access-Control-Allow-Origin', '*') // replace this your actual origin
-    		myHeaders.append('Access-Control-Allow-Methods', 'GET,DELETE,PATCH,POST,PUT')
+    		myHeaders.append('Access-Control-Allow-Methods', 'GET,DELETE,PATCH,POST,PUT');
     		myHeaders.append(
 					'Access-Control-Allow-Headers',
 					'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
-				)
+				);
 			// myHeaders.append("", "");
 			// myHeaders.append("", "");
 			// myHeaders.append("", "");
@@ -56,7 +55,8 @@ export default function HHSignInPage() {
 					headers: myHeaders,
 					body: urlencoded,
 					redirect: 'follow',
-					mode: 'no-cors'
+					// credentials: "include",
+					// mode: 'no-cors'
 				});
 					
 				const result = await res.json();
