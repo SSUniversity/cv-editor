@@ -5,7 +5,8 @@ export const users = [
         name: "Max Kulakov",
         password: "12345",
         role: "admin",
-        image: "https://kulakov.design/src/images/home/photo.png"
+        image: "https://kulakov.design/src/images/home/photo.png",
+        hh: process.env.HH_USER,
     },
     {
         id: "2",
@@ -13,6 +14,7 @@ export const users = [
         name: "Max Kul",
         password: "12345",
         role: "admin",
+        hh: process.env.HH_USER,
     },
     {
         id: "3",
@@ -20,5 +22,6 @@ export const users = [
         name: "Max Kul",
         password: "12345",
         role: "user",
+        hh: process.env.HH_USER,
       },
   ];

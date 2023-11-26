@@ -20,6 +20,10 @@ export const siteConfig = {
 			label: "Template",
 			href: "/template-1",
 		},
+		{
+			label: "Resume",
+			href: "/resume",
+		},
 	],
 	navMenuItems: [
 		{
@@ -37,6 +41,10 @@ export const siteConfig = {
 		{
 			label: "Template",
 			href: "/template-1",
+		},
+		{
+			label: "Resume",
+			href: "/resume",
 		},
 	],
 	links: {

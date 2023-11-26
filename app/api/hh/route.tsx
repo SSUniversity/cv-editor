@@ -60,6 +60,40 @@ export async function GET(req: Request) {
 }
 
 
+
+
+export async function PUT(req: Request) {
+    const { searchParams } = new URL(req.url)
+    const resume = searchParams.get('resume');
+
+    if (resume != null) {
+        const body = await req.json()
+        
+        var myHeaders = new Headers();
+        myHeaders.append("User-Agent", process.env.HH_APP_DATA!);
+        myHeaders.append("Content-Type", "application/json");
+        myHeaders.append("Authorization", `Bearer ${process.env.HH_USER}`);
+
+        var raw = JSON.stringify( body );
+
+        try {
+            const res = await fetch(`https://api.hh.ru/resumes/${resume}`, {
+                method: 'PUT',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow'
+            })
+            return NextResponse.json({ message: "Resume has been updated" });
+        } 
+        catch (error) {
+            console.log(error);
+            return NextResponse.json({ message: error });
+        }
+    }  
+}
+
+
+
 // export async function POST(req: Request) {
 //     const body = await req.json()
 

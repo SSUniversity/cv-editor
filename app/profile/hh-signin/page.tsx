@@ -52,6 +52,7 @@ export default function HHSignInPage() {
 				Access Token:
 				<Suspense fallback={<div>Loading...</div>}>
 					<Code size="lg">{url}</Code>
+					<p className="opacity-60 mb-24">Сохраните токен из поля выше для дальнейшей работы с сайтом</p>
 
 					<Link isExternal href={'/api/hh?token=' + url}>
 						<Button>Посмотреть мои резюме</Button>

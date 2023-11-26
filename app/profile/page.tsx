@@ -25,6 +25,10 @@ export default async function Profile() {
 			>
 				<Button>Авторизация hh.ru</Button>
 			</Link>
+
+			<Link href="/resume">
+				<Button>Посмотреть резюме (API HH)</Button>
+			</Link>
         </section>
 
 
