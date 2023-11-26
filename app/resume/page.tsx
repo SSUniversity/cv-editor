@@ -11,22 +11,22 @@ import React, { useState } from "react";
 import { Textarea } from "@nextui-org/input";
 import { Button } from "@nextui-org/button";
 import {Chip} from "@nextui-org/chip";
+import {Input} from "@nextui-org/input";
 
 
 
 
 export default function ResumePage() {
+	
 	const profile_data = require("@/data-template/template-hh-data.json");
-	const [textAreaValue, setTextAreaValue] = React.useState("");
-
 
 	const initialSkills = profile_data.skill_set
-	const [skill_set, setFruits] = React.useState(initialSkills);
+	const [skill_set, setSkill_set] = React.useState(initialSkills);
 	
-	const handleClose = (fruitToRemove:any) => {
-		setFruits(skill_set.filter((fruit: any) => fruit !== fruitToRemove));
+	const handleClose = (skillToRemove:any) => {
+		setSkill_set(skill_set.filter((fruit: any) => fruit !== skillToRemove));
 		if (skill_set.length === 1) {
-		  setFruits(initialSkills);
+		  setSkill_set(initialSkills);
 		}
 	};
 
@@ -46,21 +46,13 @@ export default function ResumePage() {
 		});
 	}
 
-
-
-
-
-
-	
+	const [inputValue, setInputValue] = React.useState("");
 
 
 	return (
 		<section className="flex flex-col items-center justify-center gap-24">
 			<h1 className={title()}>Резюме HH.ru</h1>
-			{/* <div className="flex flex-col text-left item-start justify-left">
-				"skill_set": {JSON.stringify(skill_set, null, 4)}
 
-			</div> */}
 
 			<div className="">
 				<h2 className="mb-4">Навыки</h2>
@@ -73,21 +65,22 @@ export default function ResumePage() {
 				</div>
 			</div>
 
-			<div className="w-full flex flex-col gap-2 max-w-[640px]">
-				
+			<div className="w-full flex flex-col gap-2 items-center justify-center max-w-[640px]">
+				<Input
+					label="Skill"
+					placeholder="Add skill to pool"
+					value={inputValue}
+					onValueChange={setInputValue}
+				/>
+				<Button 
+					className="max-w-[240px]"
+					onClick={() => { setSkill_set([...skill_set, inputValue]); }}
+				>
+					Добавить навык
+				</Button>
 			</div>
 
-			{/* <div className="w-full flex flex-col gap-2 max-w-[640px]">
-				<Textarea
-					label="Skill Set"
-					labelPlacement="outside"
-					placeholder="Enter your Skill Set"
-					value={textAreaValue}
-					onValueChange={setTextAreaValue}
-				/>
-				<p className="text-default-500 text-small">Textarea value: {textAreaValue}</p>
-			</div> */}
-
+			
 			<Button onClick={updateResume}>Обновить резюме</Button>
 			
 
