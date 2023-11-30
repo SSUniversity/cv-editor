@@ -18,6 +18,7 @@ import {Input} from "@nextui-org/input";
 
 export default function ResumePage() {
 	
+	const session = useSession();
 	const profile_data = require("@/data-template/template-hh-data.json");
 
 	const initialSkills = profile_data.skill_set
@@ -55,7 +56,15 @@ export default function ResumePage() {
 
 
 			<div className="">
-				<h2 className="mb-4">Навыки</h2>
+				<h2 className="mb-4">	
+					Навыки 
+					<span className="opacity-100">
+						{skill_set == initialSkills? 
+						<div className="text-green-600"> [ не изменено ]</div> 
+						: 
+						<div className="text-yellow-600"> [ изменено ]</div>}
+					</span>
+				</h2>
 				<div className="flex flex-wrap gap-2">
 					{skill_set.map((skill: any, index: any) => (
 						<Chip key={index} onClose={() => handleClose(skill)} variant="flat">
@@ -80,6 +89,12 @@ export default function ResumePage() {
 				</Button>
 			</div>
 
+			
+			{/* {session?.data?.user?.email == process.env.MAX_DATA ? 
+				<Button onClick={updateResume}>Обновить резюме</Button> 
+				: 
+				<Button onClick={updateResume}>У вас недостаточно прав</Button> 
+			} */}
 			
 			<Button onClick={updateResume}>Обновить резюме</Button>
 			
