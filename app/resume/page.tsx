@@ -55,6 +55,7 @@ export default function ResumePage() {
 			<h1 className={title()}>Резюме HH.ru</h1>
 
 
+
 			<div className="">
 				<h2 className="mb-4">	
 					Навыки 
