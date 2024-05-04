@@ -95,7 +95,7 @@ export default function ReleasesPage() {
                 <Card >
                     <CardHeader className="container">
                         <Chip color="primary">v0.1</Chip>
-                        <p className="text-gray-500 pl-4">10 may 2024</p>
+                        <p className="text-gray-500 pl-4">04 may 2024</p>
                     </CardHeader>
                     <Divider/>
 
