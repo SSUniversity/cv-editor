@@ -24,6 +24,14 @@ export const siteConfig = {
 			label: "Resume",
 			href: "/resume",
 		},
+		{
+			label: "Guide",
+			href: "/guide",
+		},
+		{
+			label: "Releases",
+			href: "/releases",
+		},
 	],
 	navMenuItems: [
 		{
@@ -45,6 +53,14 @@ export const siteConfig = {
 		{
 			label: "Resume",
 			href: "/resume",
+		},
+		{
+			label: "Guide",
+			href: "/guide",
+		},
+		{
+			label: "Releases",
+			href: "/releases",
 		},
 	],
 	links: {
