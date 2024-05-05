@@ -18,8 +18,7 @@ export default function ReleasesPage() {
         if (a.version > b.version) {
             return -1;
         }
-    });;
-
+    });
 
     return (
         <div>
