@@ -1,0 +1,69 @@
+[
+    {
+        "type": "WIP",
+        "version": "none",
+        "date": "current",
+        "task_list": [
+            "MongoDB Implimentation",
+            "Save auth users",
+            "Save hh user token in db",
+            "Save Releases in DB",
+            "Save user cv in DB",
+            "Personal cv page",
+            "Personal update cv page"
+        ],
+        "author": {
+            "thumbnail": "https://kulakov.design/src/images/home/photo.png",
+            "name": "Max Kulakov",
+            "team": "CV Editor Team"
+        }
+    },
+
+    {
+        "type": "WIP",
+        "version": "none",
+        "date": "current",
+        "task_list": [
+            "Create CV Editor Logo",
+            "Create CV Editor Identity"
+        ],
+        "author": {
+            "thumbnail": "https://zevakina.design/src/images/home/square.jpg",
+            "name": "Valeria Zevakina",
+            "team": "CV Editor Team"
+        }
+    },
+
+    {
+        "type": "Release",
+        "version": "0.1.1",
+        "date": "2024-04-04",
+        "task_list": [
+            "Add Guide Page",
+            "Add Releases Page"
+        ],
+        "author": {
+            "thumbnail": "https://kulakov.design/src/images/home/photo.png",
+            "name": "Max Kulakov",
+            "team": "CV Editor Team"
+        }
+    },
+
+    {
+        "type": "Release",
+        "version": "0.1.2",
+        "date": "2024-05-05",
+        "task_list": [
+            "Add Release Card Component",
+            "Structure JSON to save Release data",
+            "Add sorting to Release data"
+        ],
+        "author": {
+            "thumbnail": "https://kulakov.design/src/images/home/photo.png",
+            "name": "Max Kulakov",
+            "team": "CV Editor Team"
+        }
+    }
+
+
+]

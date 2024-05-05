@@ -5,130 +5,70 @@ import { Avatar, Checkbox, CheckboxGroup, Divider, Image } from "@nextui-org/rea
 import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/card";
 import {Chip} from "@nextui-org/chip";
 
+
+function getDate(date: string) {
+    const temp_date = new Date(date).toUTCString().slice(5, 16);
+    return temp_date;
+};
+
+
 export default function ReleasesPage() {
-    const date = new Date().toUTCString().slice(5, 16);
+    const current_date = new Date().toUTCString().slice(5, 16);
+    const release_list = require("@/data-template/release-data.json").sort((a:any, b:any) => {
+        if (a.version > b.version) {
+            return -1;
+        }
+    });;
+
 
     return (
         <div>
             <h1 className={title()}>Releases</h1>
-            <div className="gap-4 grid grid-cols-2 sm:grid-cols-4 mt-4 w-full">
-
-                {/* Card Item */}
-                <Card>
-                    <CardHeader className="container">
-                        <Chip color="primary" variant="bordered">Current work</Chip>
-                        <p className="text-gray-500 pl-4">{date}</p>
-                    </CardHeader>
-                    <Divider/>
-                    <CardBody>
-                        <div className="text-gray-500">
-                            <h4>To Do</h4>
-                            <ul className="list-disc">
-                                <li>MongoDB Implimentation</li>
-                                <li>Save auth users</li>
-                                <li>Save hh user token in db</li>
-                                <li>Save user cv in DB</li>
-                                <li>Personal cv page</li>
-                                <li>Personal update cv page</li>
-                                {/* <li></li> */}
-                            </ul>
-                        </div>
-                    </CardBody>
-                    <Divider/>
-                    <CardFooter>
-                        <Image
-                            isZoomed
-                            isBlurred
-                            width={40}
-                            height={40}
-                            radius="full"
-                            className="aspect-square"
-                            src="https://kulakov.design/src/images/home/photo.png"
-                        />
-                        <div className="container pl-4 text-start">
-                            <p>Max Kulakov</p>
-                            <p className="text-sm text-gray-500">CV Editor Team</p>
-                        </div>
-                    </CardFooter>
-                </Card>
-
-
-
-                {/* Card Item */}
-                <Card>
-                    <CardHeader className="container">
-                        <Chip color="primary" variant="bordered">Current work</Chip>
-                        <p className="text-gray-500 pl-4">{date}</p>
-                    </CardHeader>
-                    <Divider/>
-                    <CardBody>
-                        <div className="text-gray-500">
-                            <h4>To Do</h4>
-                            <ul className="list-disc">
-                                <li>Create CV Editor Logo</li>
-                                <li>Create CV Editor Identity</li>
-                                {/* <li></li> */}
-                            </ul>
-                        </div>
-                    </CardBody>
-                    <Divider/>
-                    <CardFooter>
-                        <Image
-                            isZoomed
-                            isBlurred
-                            width={40}
-                            height={40}
-                            radius="full"
-                            className="aspect-square"
-                            src="https://zevakina.design/src/images/home/square.jpg"
-                        />
-                        <div className="container pl-4 text-start">
-                            <p>Valeria Zevakina</p>
-                            <p className="text-sm text-gray-500">CV Editor Team</p>
-                        </div>
-                    </CardFooter>
-                </Card>
-
-
-
-                {/* Card Item */}
-                <Card >
-                    <CardHeader className="container">
-                        <Chip color="primary">v0.1</Chip>
-                        <p className="text-gray-500 pl-4">04 may 2024</p>
-                    </CardHeader>
-                    <Divider/>
-
-                    <CardBody>
-                        <div className="mb-4">
-                            <h4>Release Note</h4>
-                            <ul className="list-disc">
-                                <li>Add Guide Page</li>
-                                <li>Add Releases Page</li>
-                            </ul>
-                        </div>
-
-                    </CardBody>
-                    <Divider/>
-
-                    <CardFooter>
-                        <Image
-                            isZoomed
-                            isBlurred
-                            width={40}
-                            height={40}
-                            radius="full"
-                            className="aspect-square"
-                            src="https://kulakov.design/src/images/home/photo.png"
-                        />
-                        <div className="container pl-4 text-start">
-                            <p>Max Kulakov</p>
-                            <p className="text-sm text-gray-500">CV Editor Team</p>
-                        </div>
-                    </CardFooter>
-                </Card>
-
-
+            <div className="gap-4 grid grid-cols-1 sm:grid-cols-4 mt-4 w-full">
+                {release_list.map((item:any, index:any) => (
+                    <Card key={index}>
+                        <CardHeader className="container">
+                            {item.type == "WIP"?
+                                <Chip color="primary" variant="bordered">WIP</Chip>
+                                :
+                                <Chip color="primary" variant="solid">v{item.version}</Chip>
+                            }
+                            {item.type == "WIP"?
+                                <p className="text-gray-500 pl-3">{current_date}</p>
+                                :
+                                <p className="text-gray-500 pl-3">{getDate(item.date)}</p>
+                            }
+                        </CardHeader>
+                        <Divider/>
+                        <CardBody>
+                            <div className={item.type == "WIP"? "text-gray-500" : ""}>
+                                {item.type == "WIP"?
+                                    <h4>In Progress</h4>
+                                    :
+                                    <h4>Release Note</h4>
+                                }
+                                <ul className="list-disc">
+                                    {item.task_list.map((item:any, index:any) => (
+                                        <li key={index}>{item}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </CardBody>
+                        <Divider/>
+                        <CardFooter>
+                            <Image
+                                isZoomed isBlurred radius="full"
+                                width={40} height={40}
+                                className="aspect-square"
+                                src={item.author.thumbnail}
+                            />
+                            <div className="container pl-3 text-start">
+                                <p>{item.author.name}</p>
+                                <p className="text-sm text-gray-500">{item.author.team}</p>
+                            </div>
+                        </CardFooter>
+                    </Card>
+                ))}
             </div>
         </div>
     );
