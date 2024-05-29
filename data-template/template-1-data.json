@@ -8,7 +8,7 @@
         "https://t.me/MaxKulakov",
         "https://discord.com/servers"
     ],
-    "profile_image": "https://nextui-docs-v2.vercel.app/images/hero-card-complete.jpeg",
+    "profile_image": "https://kulakov.design/src/images/home/photo.png",
     "about": [
         "I am currently a senior designer at YKSoft. I live and work in Saratov and pursue a Master's degree in Computer Science at the Saratov State University.",
         "I began my career in design in 2018. I started as a graphic designer and eventually realized that I’m more interested into the sphere of interfaces and products. Since then, I managed to work with many companies and in various projects, such as the Venrok sports app, the Lifetables habit tracker, and the Easy-Traveling travel app.",
@@ -58,17 +58,17 @@
         {
             "name": "YKSoft",
             "description": "Work on projects for businesses in various fields from construction companies to the agro-industrial complex. Creation, revision and support of websites and products. Development of internal services and projects of the company.",
-            "image": "https://nextui-docs-v2.vercel.app/images/hero-card-complete.jpeg"
+            "image": "https://kulakov.design/src/images/home/yks-mockup.png"
         },
         {
             "name": "Climbing Lines",
             "description": "An app for climbers that allows you to discover new places to climb and find different routes in locations. It contains selections based on users interests and collections moderated by experienced guides. In addition, the trip is accompanied by a convenient route tracking, which allows anyone to get the maximum of emotions from the ascent and not get lost. It is also possible to share feedback on the route and update information about it.",
-            "image": "https://nextui-docs-v2.vercel.app/images/hero-card-complete.jpeg"
+            "image": "https://kulakov.design/src/images/home/cl-mockup.png"
         },
         {
             "name": "Venrok",
             "description": "A sports app for professional athletes that allows its users to customize their workout in the most detailed way. There is not only a basic functionality with workouts and a tracker, but also many parameters which allows you to train as efficiently as possible. An important advantage is the possibility to add the role of a coach and the ability to join groups, followed by viewing detailed statistics and analytics for each athlete who trains in your community.",
-            "image": "https://nextui-docs-v2.vercel.app/images/hero-card-complete.jpeg"
+            "image": "https://kulakov.design/src/images/home/vnrk-mockup.png"
         }
     ]
 }
