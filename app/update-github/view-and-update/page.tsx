@@ -42,13 +42,17 @@ export default function ViewAndUpdateGithubPage() {
     return (
         <section className="flex flex-col items-center justify-center gap-8">
             <h1 className={title()}>Обновление резюме на Github</h1>
-            <Textarea
-                  label="Напишите о себе в свободной форме в формате Markdown"
-                  labelPlacement="outside"
-                  className="max-w-full"
-                  value={readme}
-                  onValueChange={setReadme}
-            />
+            <div>
+                <p className="mb-2">Напишите о себе в свободной форме в формате Markdown или измените
+                уже существующее описание профиля и нажмите кнопку обновления</p>
+                <Textarea
+                    label=""
+                    // labelPlacement="outside"
+                    className="max-w-full"
+                    value={readme}
+                    onValueChange={setReadme}
+                />
+            </div>
             <Link href='#'>
                 <Button color='primary' onClick={()=>setGithubReadme(token!, readme)}>Обновить</Button>
             </Link>
