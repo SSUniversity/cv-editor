@@ -13,25 +13,28 @@ import { Button } from "@nextui-org/button";
 export default async function Profile() {
 
 	const session = await getServerSession(authConfig);
-    
+
 	return (
-		<section className="flex flex-col items-center justify-center gap-24">
-			<h1 className={title()}>Profile of {session?.user?.name}</h1>
+		<section className="flex flex-col items-center justify-center gap-12">
+			<h1 className={title()}>Вы вошли как {session?.user?.name}</h1>
 			{/* <h1>Profile of {session?.user?.name}</h1> */}
       		{/* {session?.user?.image && <img src={session.user.image} alt="" />} */}
 			<Link href="/hh">HH Dev Page</Link>
 
-			<Link href={"https://hh.ru/oauth/authorize?response_type=code&client_id=" + process.env.HH_ID}
-			>
+			<Link href={"https://hh.ru/oauth/authorize?response_type=code&client_id=" + process.env.HH_ID}>
 				<Button>Авторизация hh.ru</Button>
 			</Link>
 
 			<Link href="/resume">
 				<Button>Посмотреть резюме (API HH)</Button>
 			</Link>
+
+			<Link href="/update-github">
+				<Button>Обновить резюме на Github</Button>
+			</Link>
         </section>
 
 
-			
+
 	);
 }

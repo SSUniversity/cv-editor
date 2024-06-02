@@ -36,6 +36,21 @@
 
     {
         "type": "Release",
+        "version": "0.1.3",
+        "date": "2024-06-02",
+        "task_list": [
+            "Add functionality for updating resume on GitHub",
+            "Fix some Bugs"
+        ],
+        "author": {
+            "thumbnail": "https://kulakov.design/src/images/home/photo.png",
+            "name": "Max Kulakov",
+            "team": "CV Editor Team"
+        }
+    },
+
+    {
+        "type": "Release",
         "version": "0.1.1",
         "date": "2024-05-04",
         "task_list": [
