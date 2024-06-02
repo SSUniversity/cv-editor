@@ -32,8 +32,8 @@ export default function UpdateGithubPage() {
         <section className="flex flex-col items-center justify-center gap-8">
             <h1 className={title()}>Обновление резюме на Github. Получение токена</h1>
 
-            <p>Перейдите по ссылке <Link href='https://github.com/new' target='_blank'>https://github.com/new</Link>
-            и создайте публичный репозиторий с вамим никнеймом, как показано на изображении ниже</p>
+            <p>Перейдите по ссылке <Link href='https://github.com/new' target='_blank'>https://github.com/new</Link> и
+            создайте публичный репозиторий с вашим никнеймом, как показано на изображении ниже</p>
             <Image
                 isZoomed
                 isBlurred
