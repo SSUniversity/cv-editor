@@ -94,7 +94,7 @@ export async function GET(req: Request) {
 export async function PUT(req: Request) {
     const { searchParams } = new URL(req.url)
     const resume = searchParams.get('resume');
-    const gh_token = searchParams.get('gh_token');
+    const hh_token = searchParams.get('hh_token');
 
     if (resume != null) {
         const body = await req.json()
@@ -102,7 +102,7 @@ export async function PUT(req: Request) {
         var myHeaders = new Headers();
         myHeaders.append("User-Agent", process.env.HH_APP_DATA!);
         myHeaders.append("Content-Type", "application/json");
-        myHeaders.append("Authorization", `Bearer ${gh_token}`);
+        myHeaders.append("Authorization", `Bearer ${hh_token}`);
 
         var raw = JSON.stringify( body );
 
