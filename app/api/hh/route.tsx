@@ -7,6 +7,10 @@ export async function GET(req: Request) {
 	const { searchParams } = new URL(req.url)
     const code = searchParams.get('code');
     const token = searchParams.get('token');
+    const resume = searchParams.get('token');
+    const resume_id = searchParams.get('resume_id');
+    const request_type = searchParams.get('request_type')
+
 
 
     if (code != null) {
@@ -26,17 +30,18 @@ export async function GET(req: Request) {
                 body: urlencoded,
                 redirect: 'follow',
             });
-                
+
             const result = await res.json();
             return NextResponse.json(result);
-        } 
+        }
         catch (error) {
             console.log(error);
         }
-    } 
+    }
 
 
-    if (token != null) {
+    // Get resume list
+    if (token != null && resume_id == null && request_type == null) {
         var myHeaders = new Headers();
         myHeaders.append("Authorization", `Bearer ${token}`);
 
@@ -46,14 +51,38 @@ export async function GET(req: Request) {
                 headers: myHeaders,
                 redirect: 'follow',
             });
-                
             const result = await res.json();
+            // console.log(result.items[0].experience);
             return NextResponse.json(result);
-        } 
+        }
         catch (error) {
             console.log(error);
         }
     }
+
+
+    // get resume by ID
+    if (token != null && resume_id != null && request_type == "getexp") {
+        var myHeaders = new Headers();
+        myHeaders.append("Authorization", `Bearer ${token}`);
+
+        try {
+            const res = await fetch(`https://api.hh.ru/resumes/${resume_id}`, {
+                method: 'GET',
+                headers: myHeaders,
+                redirect: 'follow',
+            });
+            const result = await res.json();
+            // console.log(result.items[0].experience);
+            return NextResponse.json(result);
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }
+
+
+
 
 
     return NextResponse.json("bad request");
@@ -68,7 +97,7 @@ export async function PUT(req: Request) {
 
     if (resume != null) {
         const body = await req.json()
-        
+
         var myHeaders = new Headers();
         myHeaders.append("User-Agent", process.env.HH_APP_DATA!);
         myHeaders.append("Content-Type", "application/json");
@@ -84,12 +113,12 @@ export async function PUT(req: Request) {
                 redirect: 'follow'
             })
             return NextResponse.json({ message: "Resume has been updated" });
-        } 
+        }
         catch (error) {
             console.log(error);
             return NextResponse.json({ message: error });
         }
-    }  
+    }
 }
 
 

@@ -6,100 +6,204 @@ import { authConfig } from "@/config/auth";
 import { useSession, signOut } from "next-auth/react";
 import { useSearchParams } from 'next/navigation'
 
-import {getUserResume} from "@/lib/getUserResume"
 import React, { useState } from "react";
 import { Textarea } from "@nextui-org/input";
 import { Button } from "@nextui-org/button";
 import {Chip} from "@nextui-org/chip";
 import {Input} from "@nextui-org/input";
+import { Link } from "@nextui-org/link";
+import {parseDate, getLocalTimeZone} from "@internationalized/date";
 
+// import { useCallback } from "react";
+import {setGithubReadme} from "@/lib/setGithubReadme"
+
+import {getUserExperience} from "@/lib/getUserExperience"
+import {getUserResume} from "@/lib/getUserResume"
+
+function isTokenAvailable(hh_token: string, gh_token:string){
+    if (hh_token == null || gh_token == null || hh_token == '' || gh_token == '')
+        return false;
+    return true;
+}
+
+// interface ExperienceProps {
+//     start: string,
+//     end?: string,
+//     company: string,
+//     company_id: null,
+//     industry: null,
+//     industries: [],
+//     area: null,
+//     company_url?: string,
+//     "employer": null,
+//     position: string,
+//     description: string
+// }
 
 
 
 export default function ResumePage() {
-	
 	const session = useSession();
-	const profile_data = require("@/data-template/template-hh-data.json");
+	const searchParams = useSearchParams()
+    const hh_token = searchParams.get('hh-token')
+    const gh_token = searchParams.get('gh-token')
 
-	const initialSkills = profile_data.skill_set
-	const [skill_set, setSkill_set] = React.useState(initialSkills);
-	
-	const handleClose = (skillToRemove:any) => {
-		setSkill_set(skill_set.filter((fruit: any) => fruit !== skillToRemove));
-		if (skill_set.length === 1) {
-		  setSkill_set(initialSkills);
-		}
-	};
+    const [companyInputValue, setCompanyInputValue] = React.useState("");
+    const [positionInputValue, setPositionInputValue] = React.useState("");
+    const [startDateValue, setStartDateValue] = React.useState("");
 
-	const skills_body = JSON.parse(JSON.stringify(`{"skill_set": [${skill_set.map((x: any) => `"${x}"`)}]}`))
-	function updateResume() {
-		const postData = async () => {
 
-			const response = await fetch("/api/hh?resume=986544fbff0b05dce60039ed1f53716830586e", {
-				method: "PUT",
-				body: skills_body,
-			});
-			console.log(skills_body);
-			return response.json();
-		};
-		postData().then((data) => {
-			console.log(data.message);
-		});
-	}
 
-	const [inputValue, setInputValue] = React.useState("");
+
+    // Get hh resume id and Experience list
+    var [hhExperience, setHhExperience] = React.useState<any>([])
+    const [hhResumeID, setHhResumeID] = React.useState('')
+	const getData = React.useCallback(async () => {
+        try {
+            // const resume_id = await getUserResume(hh_token!);
+            // setHhResumeID(resume_id);
+
+            // const resume_experience = await getUserExperience(hh_token!, resume_id)
+            // console.log(resume_experience)
+
+            getUserResume(hh_token!).then((id) => console.log(getUserExperience(hh_token!, id)));
+
+
+
+            // setHhExperience(resume_experience);
+
+    	} catch (error){
+    		console.log(error);
+    	}
+    }, []);
+    React.useEffect(() => {
+        getData();
+    }, [getData]);
+
+
+
+
+
+ //    function updateResume() {
+ //        hhExperience.push(
+ //            {
+ //                "start": startDateValue || '2022-04-05',
+ //                "end": null,
+ //                "company": companyInputValue || 'Test Company',
+ //                "company_id": null,
+ //                "industry": null,
+ //                "industries": [],
+ //                "area": null,
+ //                "company_url": null,
+ //                "employer": null,
+ //                "position": positionInputValue || 'Test Position'
+ //            },
+ //        )
+ //        var resultHhExperience: any = {};
+ //        resultHhExperience.experience = hhExperience;
+
+ //        // console.log('resultHhExperience')
+ //        // console.log(resultHhExperience)
+
+
+	// 	const postData = async () => {
+	// 		const response = await fetch(`/api/hh?resume=${hhResumeID}`, {
+	// 			method: "PUT",
+	// 			body: JSON.stringify(resultHhExperience),
+	// 		});
+	// 		return response.json();
+	// 	};
+	// 	postData().then((data) => {
+	// 		console.log(data.message);
+	// 	});
+
+
+	// 	// Update Resume on Gihub
+	// 	var options = {
+ //            year: 'numeric',
+ //            month: 'long',
+ //            day: 'numeric',
+ //            timezone: 'UTC'
+	// 	};
+	// 	const gh_new_date = new Date('2022-05-05').toLocaleString("ru", options as any)
+	// 	setGithubReadme(gh_token!, `### Всем привет! С ${gh_new_date} я работаю на должности ${positionInputValue} в компании ${companyInputValue}`)
+	// }
+
+
+
+
+
 
 
 	return (
-		<section className="flex flex-col items-center justify-center gap-24">
-			<h1 className={title()}>Резюме HH.ru</h1>
+	    <section className="flex flex-col items-center justify-center gap-24">
+			<h1 className={title()}>Обновление опыта работы на hh.ru и Github</h1>
 
-
-
-			<div className="">
-				<h2 className="mb-4">	
-					Навыки 
-					<span className="opacity-100">
-						{skill_set == initialSkills? 
-						<div className="text-green-600"> [ не изменено ]</div> 
-						: 
-						<div className="text-yellow-600"> [ изменено ]</div>}
-					</span>
-				</h2>
-				<div className="flex flex-wrap gap-2">
-					{skill_set.map((skill: any, index: any) => (
-						<Chip key={index} onClose={() => handleClose(skill)} variant="flat">
-							{skill}
-						</Chip>
-					))}
-				</div>
-			</div>
-
-			<div className="w-full flex flex-col gap-2 items-center justify-center max-w-[640px]">
-				<Input
-					label="Skill"
-					placeholder="Add skill to pool"
-					value={inputValue}
-					onValueChange={setInputValue}
+			{isTokenAvailable(hh_token!, gh_token!)
+			?
+			<div className="flex flex-col items-center justify-center gap-4">
+                <h3>Укажите новое место работы</h3>
+                <Input
+                        label="Название компании"
+                        value={companyInputValue}
+                        onValueChange={setCompanyInputValue}
+                />
+                <Input
+                        label="Должность"
+                        value={positionInputValue}
+                        onValueChange={setPositionInputValue}
+                />
+                <Input
+						type="date"
+						label="Дата начала"
+						value={startDateValue}
+                        onValueChange={setStartDateValue}
+						placeholder="dd.mm.yyyy"
 				/>
-				<Button 
-					className="max-w-[240px]"
-					onClick={() => { setSkill_set([...skill_set, inputValue]); }}
-				>
-					Добавить навык
-				</Button>
+
+
+
+				{/* <Button onClick={updateResume}>Обновить резюме</Button> */}
 			</div>
 
-			
-			{/* {session?.data?.user?.email == process.env.MAX_DATA ? 
-				<Button onClick={updateResume}>Обновить резюме</Button> 
-				: 
-				<Button onClick={updateResume}>У вас недостаточно прав</Button> 
-			} */}
-			
-			<Button onClick={updateResume}>Обновить резюме</Button>
-			
 
+
+			:
+			<div className="flex flex-col items-center justify-center gap-4">
+			    <p>Для обновления резюме нажмите на кнопку ниже и следуйте инструкции для авторизации на сервисах</p>
+			    <Link href={"https://hh.ru/oauth/authorize?response_type=code&client_id="
+							+ "IAA3UIFRNM9OF1F9UKMFGJFCSO8KOOA4635I42DALGIRGHK83O28TO7D0C97EKTR"}>
+                    <Button>Авторизоваться</Button>
+                </Link>
+			</div>
+			}
 		</section>
 	);
 }
+
+
+
+// http://localhost:3000/resume?hh-token=USEROPORJT9OFQA9FDGVK8OSE8OJ7S5SJ1TUMD54DG8ODTQERKHE5SPF336A1PVI&gh-token=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
+
+
+
+// {
+//     "experience": [
+//         {
+//             "start": "2023-07-01",
+//             "end": "2024-04-01",
+//             "company": "Citimarine Store",
+//             "company_id": null,
+//             "industry": null,
+//             "industries": [],
+//             "area": null,
+//             "company_url": "https://citimarinestore.com/",
+//             "employer": null,
+//             "position": "UX/UI дизайнер",
+//             "description": "Редизайн и обновление крупного интернет-магазина"
+//         },
+//         {
+//             ...
+//         }
+//     ]
+// }

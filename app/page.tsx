@@ -25,16 +25,16 @@ export default function Home() {
 		<section className="flex flex-col items-center justify-center gap-24 py-8 md:py-10 ">
 			<div className="flex flex-col items-center justify-center text-center gap-4">
 				<h1 className={title()}>Welcome to CV Editor</h1>
-				<h2 className={subtitle()}>Update your resume with ease using CV-Editor! 
-				Our user-friendly service makes it simple to craft a professional CV in 
-				just a few clicks. Say goodbye to outdated formats and hello to a standout 
+				<h2 className={subtitle()}>Update your resume with ease using CV-Editor!
+				Our user-friendly service makes it simple to craft a professional CV in
+				just a few clicks. Say goodbye to outdated formats and hello to a standout
 				resume that will impress any employer.</h2>
 			</div>
 
-			<h2 className="text-default-500">Page in progress...</h2>
+			{/* <h2 className="text-default-500">Page in progress...</h2> */}
 
-			
+
 		</section>
-		
+
 	);
 }

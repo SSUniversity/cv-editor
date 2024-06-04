@@ -19,19 +19,23 @@ export default async function Profile() {
 			<h1 className={title()}>Вы вошли как {session?.user?.name}</h1>
 			{/* <h1>Profile of {session?.user?.name}</h1> */}
       		{/* {session?.user?.image && <img src={session.user.image} alt="" />} */}
-			<Link href="/hh">HH Dev Page</Link>
 
-			<Link href={"https://hh.ru/oauth/authorize?response_type=code&client_id=" + process.env.HH_ID}>
+            <p>Перейдите на страницу <Link href='/resume'>Resume</Link>, чтобы обновить ваше резюме</p>
+
+            {/* <Link href="/hh">HH Dev Page</Link> */}
+
+			{/* <Link href={"https://hh.ru/oauth/authorize?response_type=code&client_id=" + process.env.HH_ID}>
 				<Button>Авторизация hh.ru</Button>
-			</Link>
+			</Link> */}
 
-			<Link href="/resume">
+			{/* <Link href="/resume">
 				<Button>Посмотреть резюме (API HH)</Button>
-			</Link>
+			</Link> */}
 
-			<Link href="/update-github">
-				<Button>Обновить резюме на Github</Button>
-			</Link>
+			{/* <Link href="/update-github">
+				<Button>Обновить резюме на Github в свободной форме</Button>
+			</Link> */}
+
         </section>
 
 

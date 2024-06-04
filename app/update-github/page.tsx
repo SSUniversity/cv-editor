@@ -17,14 +17,33 @@ import { Link } from "@nextui-org/link";
 import {Image} from "@nextui-org/react";
 import createTokenImage from '/assets/create-token.png';
 
+import {getUserToken} from "@/lib/getUserToken"
+
 
 
 export default function UpdateGithubPage() {
+
+    const searchParams = useSearchParams()
+    const hh_token = searchParams.get('hh-token')
+    const code = searchParams.get('code')
+
     const [value, setValue] = React.useState("");
 
     const isInvalid = React.useMemo(() => {
         if (value === "") return false; else return true;
     }, [value]);
+
+
+
+	const [url, setUrl] = React.useState('')
+	React.useEffect(() => {
+		getDownloadURL().then(setUrl)
+
+	}, [])
+	async function getDownloadURL(){
+		const resultData = getUserToken(code!);
+		return await Promise.resolve(resultData)
+	}
 
 
 
@@ -62,9 +81,14 @@ export default function UpdateGithubPage() {
                     isInvalid={isInvalid}
                     label="Введите ваш персональный токен Github"
                 />
-                <Link href={isInvalid ? `/update-github/view-and-update?gh-token=${value}` : '#'}>
+
+                <Link href={isInvalid ? `/resume?hh-token=${url}&gh-token=${value}` : '#'}>
                     <Button size="lg" color="primary" radius="sm">Подтвердить</Button>
                 </Link>
+
+                {/* <Link  href={`/update-github?hh-token=${url}`}>
+						<Button>Перейти к авторизации на Github</Button>
+				</Link> */}
             </div>
 
 		</section>

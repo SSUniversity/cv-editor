@@ -72,3 +72,39 @@ export default function ReleasesPage() {
         </div>
     );
 }
+
+
+// {
+//     "type": "WIP",
+//     "version": "none",
+//     "date": "current",
+//     "task_list": [
+//         "MongoDB Implimentation",
+//         "Save auth users",
+//         "Save hh user token in db",
+//         "Save Releases in DB",
+//         "Save user cv in DB",
+//         "Personal cv page",
+//         "Personal update cv page"
+//     ],
+//     "author": {
+//         "thumbnail": "https://kulakov.design/src/images/home/photo.png",
+//         "name": "Max Kulakov",
+//         "team": "CV Editor Team"
+//     }
+// },
+
+// {
+//     "type": "WIP",
+//     "version": "none",
+//     "date": "current",
+//     "task_list": [
+//         "Create CV Editor Logo",
+//         "Create CV Editor Identity"
+//     ],
+//     "author": {
+//         "thumbnail": "https://zevakina.design/src/images/home/square.jpg",
+//         "name": "Valeria Zevakina",
+//         "team": "CV Editor Team"
+//     }
+// },

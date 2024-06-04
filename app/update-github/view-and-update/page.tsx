@@ -39,6 +39,8 @@ export default function ViewAndUpdateGithubPage() {
 		return await Promise.resolve(resultData)
 	}
 
+
+
     return (
         <section className="flex flex-col items-center justify-center gap-8">
             <h1 className={title()}>Обновление резюме на Github</h1>

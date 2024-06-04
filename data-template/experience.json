@@ -1,0 +1,84 @@
+{
+    "experience": [
+        {
+            "start": "2021-04-01",
+            "end": null,
+            "company": "YKSoft",
+            "company_id": null,
+            "industry": null,
+            "industries": [],
+            "area": {
+                "id": "79",
+                "name": "Саратов",
+                "url": "https://api.hh.ru/areas/79"
+            },
+            "company_url": "https://yksweb.ru",
+            "employer": null,
+            "position": "Ведущий дизайнер"
+        },
+        {
+            "start": "2023-07-01",
+            "end": "2024-04-01",
+            "company": "Citimarine Store",
+            "company_id": null,
+            "industry": null,
+            "industries": [],
+            "area": null,
+            "company_url": "https://citimarinestore.com/",
+            "employer": null
+        },
+        {
+            "start": "2022-12-01",
+            "end": "2023-05-01",
+            "company": "Climbing Lines",
+            "company_id": null,
+            "industry": null,
+            "industries": [],
+            "area": null,
+            "company_url": "https://www.climblines.com",
+            "employer": null
+        },
+        {
+            "start": "2019-10-01",
+            "end": "2021-02-01",
+            "company": "Venrok",
+            "company_id": null,
+            "industry": null,
+            "industries": [],
+            "area": {
+                "id": "79",
+                "name": "Саратов",
+                "url": "https://api.hh.ru/areas/79"
+            },
+            "company_url": null,
+            "employer": null
+        },
+        {
+            "start": "2019-02-01",
+            "end": "2019-10-01",
+            "company": "Youcon Events Group",
+            "company_id": null,
+            "industry": null,
+            "industries": [],
+            "area": {
+                "id": "79",
+                "name": "Саратов",
+                "url": "https://api.hh.ru/areas/79"
+            },
+            "company_url": null,
+            "employer": null
+        },
+        {
+            "start": "2024-04-01",
+            "end": null,
+            "company": "11TestCompany11",
+            "company_id": null,
+            "industry": null,
+            "industries": [],
+            "area": null,
+            "company_url": null,
+            "employer": null,
+            "position": "Ведущий дизайнер"
+        }
+    ]
+}
