@@ -86,7 +86,7 @@ export default function ResumePage() {
 
 
 		const postData = async () => {
-			const response = await fetch(`/api/hh?resume=${hhResumeID}`, {
+			const response = await fetch(`/api/hh?resume=${hhResumeID}&gh_token=${gh_token}`, {
 				method: "PUT",
 				body: JSON.stringify(resultHhExperience),
 			});

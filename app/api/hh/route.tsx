@@ -7,7 +7,7 @@ export async function GET(req: Request) {
 	const { searchParams } = new URL(req.url)
     const code = searchParams.get('code');
     const token = searchParams.get('token');
-    const resume = searchParams.get('token');
+    const gh_token = searchParams.get('gh_token');
     const resume_id = searchParams.get('resume_id');
     const request_type = searchParams.get('request_type')
 
@@ -94,6 +94,7 @@ export async function GET(req: Request) {
 export async function PUT(req: Request) {
     const { searchParams } = new URL(req.url)
     const resume = searchParams.get('resume');
+    const gh_token = searchParams.get('gh_token');
 
     if (resume != null) {
         const body = await req.json()
@@ -101,7 +102,7 @@ export async function PUT(req: Request) {
         var myHeaders = new Headers();
         myHeaders.append("User-Agent", process.env.HH_APP_DATA!);
         myHeaders.append("Content-Type", "application/json");
-        myHeaders.append("Authorization", `Bearer ${process.env.HH_USER}`);
+        myHeaders.append("Authorization", `Bearer ${gh_token}`);
 
         var raw = JSON.stringify( body );
 
