@@ -29,7 +29,7 @@ export default function Home() {
 				</h2>
 			</div>
 
-			<div className="flex flex-col items-center justify-center gap-4">
+			{/* <div className="flex flex-col items-center justify-center gap-4">
     			<p>Для этого войдите в ваш профиль</p>
     			<Image
                     isZoomed
@@ -37,11 +37,11 @@ export default function Home() {
                     src={'/assets/sign-in.png'}
                     width={180}
                 />
-            </div>
+            </div> */}
             <div className="flex flex-col items-center justify-center gap-4">
-    			<p className="text-center">Перейдите на страницу обновления резюме и последовательно,<br/>следуя инструкции, авторизуйтесь в подключённых сервисах</p>
+    			<p className="text-center">Для этого войдите в ваш профиль иерейдите на страницу обновления резюме и последовательно, следуя инструкции, авторизуйтесь в подключённых сервисах</p>
     			<Image
-                    isZoomed
+                    // isZoomed
                     isBlurred
                     src={'/assets/auth-services.png'}
                     width={480}
@@ -50,7 +50,7 @@ export default function Home() {
             <div className="flex flex-col items-center justify-center gap-4">
     			<p>Заполните необходимую информацию и нажмите кнопку обновления резюме!</p>
     			<Image
-                    isZoomed
+                    // isZoomed
                     isBlurred
                     src={'/assets/update-field.png'}
                     width={320}
