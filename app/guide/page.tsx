@@ -4,7 +4,7 @@ import { Image } from "@nextui-org/react";
 export default function GuidePage() {
     return (
         <div>
-            <h1 className={title()}>Guide</h1>
+            <h1 className={title()}>Гайд</h1>
 
             <ol>
                 <li>Log In in CV-Editor service</li>

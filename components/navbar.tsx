@@ -111,7 +111,7 @@ export const Navbar = () => {
 				{/* <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem> */}
 				<NavbarItem className="hidden md:flex gap-4">
 
-					<Button
+					{/* <Button
             			// isExternal
 						as={Link}
 						className="text-sm font-normal text-default-600 bg-default-100"
@@ -120,21 +120,21 @@ export const Navbar = () => {
 						variant="flat"
 					>
 						Create CV
-					</Button>
-					
+					</Button> */}
+
 
 
 					{session?.data ? (
-						<Tooltip 
+						<Tooltip
 						content={
 							<div className="flex px-1 py-2 flex-col gap-2">
-								<Button 
+								<Button
 									as={Link}
 									href="/profile"
 								>
-									View Profile
+									Посмотреть профиль
 								</Button>
-								<Button color="danger" onClick={() => signOut({ callbackUrl: "/" })} >Sign out</Button>
+								<Button color="danger" onClick={() => signOut({ callbackUrl: "/" })} >Выйти</Button>
 							</div>
 						}
 						>
@@ -144,10 +144,10 @@ export const Navbar = () => {
 								href={session?.data ? "/profile" : "/signin"}
 								variant="flat"
 								startContent={
-									session?.data?.user?.image? 
+									session?.data?.user?.image?
 									<Avatar src={session?.data?.user?.image!} size="sm" className="w-6 h-6 text-tiny"/>
 									:
-									<ProfileCircleIcon className="text-primary" /> 
+									<ProfileCircleIcon className="text-primary" />
 								}
 							>
 								{session?.data?.user?.name}
@@ -164,7 +164,7 @@ export const Navbar = () => {
 							}
 							variant="flat"
 							>
-								Sign In
+								Войти
 							</Button>
 					)}
 
@@ -185,10 +185,10 @@ export const Navbar = () => {
 			<NavbarMenu>
 				{/* {searchInput} */}
 				<div className="mx-4 mt-2 flex flex-col gap-2">
-					
+
 					{siteConfig.navMenuItems.map((item, index) => (
 						<NavbarMenuItem key={`${item}-${index}`}>
-							
+
 							<NextLink
 								className={clsx(
 									linkStyles({ color: "foreground" }),

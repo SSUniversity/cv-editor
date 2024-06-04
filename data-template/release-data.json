@@ -1,35 +1,18 @@
 [
     {
-        "type": "WIP",
-        "version": "none",
-        "date": "current",
+        "type": "Release",
+        "version": "0.2.0",
+        "date": "2024-06-4",
         "task_list": [
-            "MongoDB Implimentation",
-            "Save auth users",
-            "Save hh user token in db",
-            "Save Releases in DB",
-            "Save user cv in DB",
-            "Personal cv page",
-            "Personal update cv page"
+            "Translate platform to RU language",
+            "Hide dev pages",
+            "Add general resume update page",
+            "Add onboarding on home page",
+            "Fix some Bugs"
         ],
         "author": {
             "thumbnail": "https://kulakov.design/src/images/home/photo.png",
             "name": "Max Kulakov",
-            "team": "CV Editor Team"
-        }
-    },
-
-    {
-        "type": "WIP",
-        "version": "none",
-        "date": "current",
-        "task_list": [
-            "Create CV Editor Logo",
-            "Create CV Editor Identity"
-        ],
-        "author": {
-            "thumbnail": "https://zevakina.design/src/images/home/square.jpg",
-            "name": "Valeria Zevakina",
             "team": "CV Editor Team"
         }
     },
