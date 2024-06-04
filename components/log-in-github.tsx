@@ -11,14 +11,14 @@ export const GithubButton = () => {
     const callbackUrl = searchParams.get("callbackUrl") || "/profile";
 
 	return (
-		<Button 
+		<Button
             onClick={ () => signIn("github", { callbackUrl })}
             endContent={<GithubIcon/>}
             size="lg"
             variant="bordered"
         //     className="bg-black text-white"
-        >        
-			Log In with GitHub
+        >
+			Войти через GitHub
 		</Button>
 	);
 };
