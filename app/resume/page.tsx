@@ -183,9 +183,6 @@ export default function ResumePage() {
 
 
 
-// http://localhost:3000/resume?hh-token=USEROPORJT9OFQA9FDGVK8OSE8OJ7S5SJ1TUMD54DG8ODTQERKHE5SPF336A1PVI&gh-token=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
-
-
 
 // {
 //     "experience": [
