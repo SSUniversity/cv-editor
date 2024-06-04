@@ -8,7 +8,7 @@ export async function getUserResume(token: string) {
 
 		if (!data.error) {
 		  // console.log(resume_experience);
-			return { resume_id };
+			return resume_id;
 		} else {
 			return data.error;
 		}

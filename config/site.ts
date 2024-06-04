@@ -17,19 +17,19 @@ export const siteConfig = {
 		// 	href: "/dev",
 		// },
 		{
-			label: "Template",
+			label: "Шаблон",
 			href: "/template-1",
 		},
 		{
-			label: "Resume",
+			label: "Обновление резюме",
 			href: "/resume",
 		},
+		// {
+		// 	label: "Гайд",
+		// 	href: "/guide",
+		// },
 		{
-			label: "Guide",
-			href: "/guide",
-		},
-		{
-			label: "Releases",
+			label: "Релизы",
 			href: "/releases",
 		},
 	],
@@ -47,19 +47,19 @@ export const siteConfig = {
 		// 	href: "/dev",
 		// },
 		{
-			label: "Template",
+			label: "Шаблон",
 			href: "/template-1",
 		},
 		{
-			label: "Resume",
+			label: "Обновление резюме",
 			href: "/resume",
 		},
+		// {
+		// 	label: "Гайд",
+		// 	href: "/guide",
+		// },
 		{
-			label: "Guide",
-			href: "/guide",
-		},
-		{
-			label: "Releases",
+			label: "Релизы",
 			href: "/releases",
 		},
 	],

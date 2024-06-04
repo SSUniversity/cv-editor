@@ -20,7 +20,7 @@ export default async function Profile() {
 			{/* <h1>Profile of {session?.user?.name}</h1> */}
       		{/* {session?.user?.image && <img src={session.user.image} alt="" />} */}
 
-            <p>Перейдите на страницу <Link href='/resume'>Resume</Link>, чтобы обновить ваше резюме</p>
+            <p>Перейдите на страницу <Link href='/resume'>Резюме</Link>, чтобы обновить ваше резюме</p>
 
             {/* <Link href="/hh">HH Dev Page</Link> */}
 

@@ -132,9 +132,9 @@ export const Navbar = () => {
 									as={Link}
 									href="/profile"
 								>
-									View Profile
+									Посмотреть профиль
 								</Button>
-								<Button color="danger" onClick={() => signOut({ callbackUrl: "/" })} >Sign out</Button>
+								<Button color="danger" onClick={() => signOut({ callbackUrl: "/" })} >Выйти</Button>
 							</div>
 						}
 						>
@@ -164,7 +164,7 @@ export const Navbar = () => {
 							}
 							variant="flat"
 							>
-								Sign In
+								Войти
 							</Button>
 					)}
 

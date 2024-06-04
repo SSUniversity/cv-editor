@@ -13,16 +13,16 @@ export default function SignIn() {
     const [isVisible, setIsVisible] = React.useState(false);
     const toggleVisibility = () => setIsVisible(!isVisible);
 
-    
+
 	return (
 		<section className="flex flex-col w-full items-center justify-center gap-12">
-			<h1 className={title()}>Sign In</h1>
+			<h1 className={title()}>Войти</h1>
             <SignInForm />
             or
             <div className="flex flex-col w-full gap-4 items-center ">
                 <GithubButton />
                 {/* <HHButton /> */}
             </div>
-        </section>		
+        </section>
 	);
 }

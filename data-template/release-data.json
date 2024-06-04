@@ -1,5 +1,21 @@
 [
-
+    {
+        "type": "Release",
+        "version": "0.2.0",
+        "date": "2024-06-4",
+        "task_list": [
+            "Translate platform to RU language",
+            "Hide dev pages",
+            "Add general resume update page",
+            "Add onboarding on home page",
+            "Fix some Bugs"
+        ],
+        "author": {
+            "thumbnail": "https://kulakov.design/src/images/home/photo.png",
+            "name": "Max Kulakov",
+            "team": "CV Editor Team"
+        }
+    },
 
     {
         "type": "Release",

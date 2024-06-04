@@ -22,7 +22,7 @@ export default function ReleasesPage() {
 
     return (
         <div>
-            <h1 className={title()}>Releases</h1>
+            <h1 className={title()}>Релизы</h1>
             <div className="gap-4 grid grid-cols-1 sm:grid-cols-4 mt-4 w-full">
                 {release_list.map((item:any, index:any) => (
                     <Card key={index}>
