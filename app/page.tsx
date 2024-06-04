@@ -39,7 +39,7 @@ export default function Home() {
                 />
             </div> */}
             <div className="flex flex-col items-center justify-center gap-4">
-    			<p className="text-center">Для этого войдите в ваш профиль иерейдите на страницу обновления резюме и последовательно, следуя инструкции, авторизуйтесь в подключённых сервисах</p>
+    			<p className="text-center">Для этого войдите в ваш профиль и перейдите на страницу обновления резюме и последовательно, следуя инструкции, авторизуйтесь в подключённых сервисах</p>
     			<Image
                     // isZoomed
                     isBlurred
