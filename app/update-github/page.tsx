@@ -27,7 +27,17 @@ export default function UpdateGithubPage() {
     const hh_token = searchParams.get('hh-token')
     const code = searchParams.get('code')
 
-    const [value, setValue] = React.useState("");
+    // local storage
+    const [value, setValue] = React.useState(
+        typeof window !== 'undefined'
+              ? localStorage.getItem('rememberedGH') || ''
+              : ''
+    );
+    function setToStorage(){
+        localStorage.setItem('rememberedGH', value);
+    }
+
+
 
     const isInvalid = React.useMemo(() => {
         if (value === "") return false; else return true;
@@ -83,7 +93,7 @@ export default function UpdateGithubPage() {
                 />
 
                 <Link href={isInvalid ? `/resume?hh-token=${url}&gh-token=${value}` : '#'}>
-                    <Button size="lg" color="primary" radius="sm">Подтвердить</Button>
+                    <Button size="lg" color="primary" radius="sm" onClick={setToStorage}>Подтвердить</Button>
                 </Link>
 
                 {/* <Link  href={`/update-github?hh-token=${url}`}>
