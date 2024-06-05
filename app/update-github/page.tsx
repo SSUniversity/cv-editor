@@ -52,9 +52,9 @@ export default function UpdateGithubPage() {
             <h1 className={title()}>Обновление резюме на Github. Получение токена</h1>
 
             <p>Перейдите по ссылке <Link href='https://github.com/new' target='_blank'>https://github.com/new</Link> и
-            создайте публичный репозиторий с вашим никнеймом, как показано на изображении ниже</p>
+            создайте публичный репозиторий с вашим никнеймом, а также активируйте добавление README файла, как показано на изображении ниже</p>
             <Image
-                isZoomed
+                // isZoomed
                 isBlurred
                 src={'/assets/create-repo.png'}
             />
@@ -64,7 +64,7 @@ export default function UpdateGithubPage() {
             github.com/settings/tokens/new</Link> и создайте персональный токен с правами на взаимодействие
             с репозиторием, как показано на изображении ниже</p>
             <Image
-                isZoomed
+                // isZoomed
                 isBlurred
                 src={'/assets/create-token.png'}
             />

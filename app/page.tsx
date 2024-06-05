@@ -48,7 +48,7 @@ export default function Home() {
                 />
             </div>
             <div className="flex flex-col items-center justify-center gap-4">
-    			<p>Заполните необходимую информацию и нажмите кнопку обновления резюме!</p>
+    			<p className="text-center">Заполните необходимую информацию и нажмите кнопку обновления резюме!</p>
     			<Image
                     // isZoomed
                     isBlurred
