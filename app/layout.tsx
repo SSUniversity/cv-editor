@@ -5,7 +5,9 @@ import { fontSans } from "@/config/fonts";
 import { Providers } from "./providers";
 import { Navbar } from "@/components/navbar";
 import { Link } from "@nextui-org/link";
+import { Analytics } from "@vercel/analytics/react"
 import clsx from "clsx";
+
 
 export const metadata: Metadata = {
 	title: {
@@ -22,7 +24,7 @@ export const metadata: Metadata = {
 		shortcut: "/favicon-16x16.png",
 		apple: "/apple-touch-icon.png",
 	},
-	
+
 };
 
 export default function RootLayout({
@@ -31,10 +33,10 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en" suppressHydrationWarning> 
-			 
+		<html lang="en" suppressHydrationWarning>
+
 			<head>
-			
+
 			</head>
 
 			<body
@@ -43,7 +45,7 @@ export default function RootLayout({
 					fontSans.variable
 				)}
 			>
-				
+
 				<Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
 					<div className="relative flex flex-col h-screen">
 						<Navbar />
@@ -63,6 +65,7 @@ export default function RootLayout({
 						</footer> */}
 					</div>
 				</Providers>
+				<Analytics />
 			</body>
 		</html>
 	);
