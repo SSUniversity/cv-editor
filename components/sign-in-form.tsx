@@ -4,8 +4,8 @@ import React from "react";
 import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 import type { FormEventHandler } from "react";
-import {Button, ButtonGroup} from "@nextui-org/button";
-import {Input} from "@nextui-org/input";
+import {Button, ButtonGroup} from "@heroui/button";
+import {Input} from "@heroui/input";
 import { EyeFilledIcon, EyeSlashFilledIcon } from "@/components/icons";
 
 const SignInForm = () => {

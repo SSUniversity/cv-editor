@@ -1,20 +1,20 @@
 import NextLink from "next/link";
-import { Link } from "@nextui-org/link";
-import { Snippet } from "@nextui-org/snippet";
-import { Code } from "@nextui-org/code"
-import { button as buttonStyles } from "@nextui-org/theme";
+import { Link } from "@heroui/link";
+import { Snippet } from "@heroui/snippet";
+import { Code } from "@heroui/code"
+import { button as buttonStyles } from "@heroui/theme";
 import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
 import { GithubIcon } from "@/components/icons";
-import {Button, ButtonGroup} from "@nextui-org/button";
-import {Kbd} from "@nextui-org/kbd";
-import {CheckboxGroup, Checkbox} from "@nextui-org/checkbox";
-import {Select, SelectSection, SelectItem} from "@nextui-org/select";
-import {Card, CardHeader, CardBody, CardFooter} from "@nextui-org/card";
-import {Image} from "@nextui-org/image"
-import {Divider} from "@nextui-org/divider"
-import {Textarea} from "@nextui-org/input";
-import {Progress} from "@nextui-org/progress";
+import {Button, ButtonGroup} from "@heroui/button";
+import {Kbd} from "@heroui/kbd";
+import {CheckboxGroup, Checkbox} from "@heroui/checkbox";
+import {Select, SelectSection, SelectItem} from "@heroui/select";
+import {Card, CardHeader, CardBody, CardFooter} from "@heroui/card";
+import {Image} from "@heroui/image"
+import {Divider} from "@heroui/divider"
+import {Textarea} from "@heroui/input";
+import {Progress} from "@heroui/progress";
 
 
 

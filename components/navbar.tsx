@@ -7,11 +7,11 @@ import {
 	NavbarBrand,
 	NavbarItem,
 	NavbarMenuItem,
-} from "@nextui-org/navbar";
-import { Button } from "@nextui-org/button";
-import { Link } from "@nextui-org/link";
+} from "@heroui/navbar";
+import { Button } from "@heroui/button";
+import { Link } from "@heroui/link";
 
-import { link as linkStyles, user } from "@nextui-org/theme";
+import { link as linkStyles, user } from "@heroui/theme";
 
 import { siteConfig } from "@/config/site";
 import NextLink from "next/link";
@@ -28,8 +28,8 @@ import {
 	CreateIcon,
 } from "@/components/icons";
 
-import {Tooltip} from "@nextui-org/tooltip";
-import {Avatar, AvatarGroup, AvatarIcon} from "@nextui-org/avatar";
+import {Tooltip} from "@heroui/tooltip";
+import {Avatar, AvatarGroup, AvatarIcon} from "@heroui/avatar";
 
 import { Logo } from "@/components/icons";
 
@@ -37,7 +37,7 @@ import { useSession, signOut } from "next-auth/react";
 import { usePathname } from "next/navigation";
 import { getServerSession } from "next-auth/next";
 import { data } from "autoprefixer";
-import { image } from "@nextui-org/react";
+import { image } from "@heroui/react";
 
 export const Navbar = () => {
 	// const searchInput = (

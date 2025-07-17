@@ -7,11 +7,11 @@ import { useSession, signOut } from "next-auth/react";
 import { useSearchParams } from 'next/navigation'
 
 import React, { useState } from "react";
-import { Textarea } from "@nextui-org/input";
-import { Button } from "@nextui-org/button";
-import {Chip} from "@nextui-org/chip";
-import {Input} from "@nextui-org/input";
-import { Link } from "@nextui-org/link";
+import { Textarea } from "@heroui/input";
+import { Button } from "@heroui/button";
+import {Chip} from "@heroui/chip";
+import {Input} from "@heroui/input";
+import { Link } from "@heroui/link";
 import {parseDate, getLocalTimeZone} from "@internationalized/date";
 
 // import { useCallback } from "react";

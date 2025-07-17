@@ -7,8 +7,8 @@ import React from "react";
 
 import { authConfig } from "@/config/auth";
 import { getServerSession } from "next-auth/next";
-import { Link } from "@nextui-org/link";
-import { Button } from "@nextui-org/button";
+import { Link } from "@heroui/link";
+import { Button } from "@heroui/button";
 
 export default async function Profile() {
 

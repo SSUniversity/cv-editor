@@ -1,15 +1,15 @@
 "use client";
 
 import * as React from "react";
-import {RadioGroup, Radio} from "@nextui-org/radio";
-import {Checkbox} from "@nextui-org/checkbox";
-import {Divider} from "@nextui-org/divider";
-import {Button, ButtonGroup} from "@nextui-org/button";
+import {RadioGroup, Radio} from "@heroui/radio";
+import {Checkbox} from "@heroui/checkbox";
+import {Divider} from "@heroui/divider";
+import {Button, ButtonGroup} from "@heroui/button";
 import { DeleteIcon } from "./icons";
-import {Textarea} from "@nextui-org/input";
+import {Textarea} from "@heroui/input";
 import Link from "next/link";
-import {  Modal,   ModalContent,   ModalHeader,   ModalBody,   ModalFooter, useDisclosure} from "@nextui-org/modal";
-import {Spacer} from "@nextui-org/spacer";
+import {  Modal,   ModalContent,   ModalHeader,   ModalBody,   ModalFooter, useDisclosure} from "@heroui/modal";
+import {Spacer} from "@heroui/spacer";
 
 
 export const ActionFieldButton = () => {

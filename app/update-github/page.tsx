@@ -8,13 +8,13 @@ import { useSearchParams } from 'next/navigation'
 
 import {getUserResume} from "@/lib/getUserResume"
 import React, { useState } from "react";
-import { Textarea } from "@nextui-org/input";
-import { Button } from "@nextui-org/button";
-import {Chip} from "@nextui-org/chip";
-import {Input} from "@nextui-org/input";
-import { Link } from "@nextui-org/link";
+import { Textarea } from "@heroui/input";
+import { Button } from "@heroui/button";
+import {Chip} from "@heroui/chip";
+import {Input} from "@heroui/input";
+import { Link } from "@heroui/link";
 
-import {Image} from "@nextui-org/react";
+import {Image} from "@heroui/react";
 import createTokenImage from '/assets/create-token.png';
 
 import {getUserToken} from "@/lib/getUserToken"

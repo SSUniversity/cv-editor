@@ -2,11 +2,11 @@
 
 import React from "react";
 import { subtitle, title } from "@/components/primitives";
-import {User} from "@nextui-org/user";
-import {Input} from "@nextui-org/input";
-import {Select, SelectSection, SelectItem} from "@nextui-org/select";
-import {Button, ButtonGroup} from "@nextui-org/button";
-import {Code} from "@nextui-org/code";
+import {User} from "@heroui/user";
+import {Input} from "@heroui/input";
+import {Select, SelectSection, SelectItem} from "@heroui/select";
+import {Button, ButtonGroup} from "@heroui/button";
+import {Code} from "@heroui/code";
 import { Skills } from "@/components/skills";
 
 

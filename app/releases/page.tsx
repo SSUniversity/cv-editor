@@ -1,9 +1,9 @@
 "use client";
 
 import { title } from "@/components/primitives";
-import { Avatar, Checkbox, CheckboxGroup, Divider, Image } from "@nextui-org/react";
-import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/card";
-import {Chip} from "@nextui-org/chip";
+import { Avatar, Checkbox, CheckboxGroup, Divider, Image } from "@heroui/react";
+import { Card, CardBody, CardFooter, CardHeader } from "@heroui/card";
+import {Chip} from "@heroui/chip";
 
 
 function getDate(date: string) {

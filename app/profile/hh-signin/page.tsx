@@ -3,21 +3,21 @@
 import React, { Suspense } from "react";
 import { title } from "@/components/primitives";
 
-import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, User, Chip, ChipProps, Tooltip, getKeyValue} from "@nextui-org/react";
-import {Checkbox} from "@nextui-org/checkbox";
-import {Input} from "@nextui-org/input";
-import {Divider} from "@nextui-org/divider";
+import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, User, Chip, ChipProps, Tooltip, getKeyValue} from "@heroui/react";
+import {Checkbox} from "@heroui/checkbox";
+import {Input} from "@heroui/input";
+import {Divider} from "@heroui/divider";
 import { Comparison } from "@/components/comparison";
 
 import { useSearchParams } from 'next/navigation'
-import { Button } from "@nextui-org/button";
+import { Button } from "@heroui/button";
 
 import { useState, useEffect } from "react";
 
-import {Code} from "@nextui-org/code";
-import { user } from "@nextui-org/theme";
+import {Code} from "@heroui/code";
+import { user } from "@heroui/theme";
 import { redirect } from 'next/navigation'
-import { Link } from "@nextui-org/link";
+import { Link } from "@heroui/link";
 
 import {getUserToken} from "@/lib/getUserToken"
 

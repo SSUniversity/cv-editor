@@ -1,9 +1,9 @@
 "use client";
 
 import * as React from "react";
-import {Input} from "@nextui-org/input";
-import {Select, SelectSection, SelectItem} from "@nextui-org/select";
-import {Button, ButtonGroup} from "@nextui-org/button";
+import {Input} from "@heroui/input";
+import {Select, SelectSection, SelectItem} from "@heroui/select";
+import {Button, ButtonGroup} from "@heroui/button";
 
 import {DeleteIcon} from "@/components/icons";
 

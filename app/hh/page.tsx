@@ -3,10 +3,10 @@
 import React from "react";
 import { title } from "@/components/primitives";
 
-import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, User, Chip, ChipProps, Tooltip, getKeyValue} from "@nextui-org/react";
-import {Checkbox} from "@nextui-org/checkbox";
-import {Input} from "@nextui-org/input";
-import {Divider} from "@nextui-org/divider";
+import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, User, Chip, ChipProps, Tooltip, getKeyValue} from "@heroui/react";
+import {Checkbox} from "@heroui/checkbox";
+import {Input} from "@heroui/input";
+import {Divider} from "@heroui/divider";
 
 
 import {users} from "./data";

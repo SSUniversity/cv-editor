@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Link } from "@nextui-org/link";
+import { Link } from "@heroui/link";
 import {
 	TwitterIcon,
 	GithubIcon,
