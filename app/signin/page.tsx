@@ -15,7 +15,7 @@ export default function SignIn() {
 
 
 	return (
-		<section className="flex flex-col w-full items-center justify-center gap-12">
+		<section className="flex flex-col w-full items-center justify-center gap-12 1">
 			<h1 className={title()}>Войти</h1>
             <SignInForm />
             or
